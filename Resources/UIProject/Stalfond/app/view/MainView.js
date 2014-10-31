@@ -21,6 +21,8 @@ Ext.define('Stalfond.view.MainView', {
         'Stalfond.view.MainViewViewModel',
         'Ext.menu.Menu',
         'Ext.menu.Item',
+        'Ext.tab.Panel',
+        'Ext.tab.Tab',
         'Ext.form.Label'
     ],
 
@@ -84,8 +86,23 @@ Ext.define('Stalfond.view.MainView', {
                     },
                     items: [
                         {
-                            xtype: 'label',
-                            text: 'Home View'
+                            xtype: 'tabpanel',
+                            flex: 1,
+                            itemId: 'contractTabControl',
+                            width: '100%',
+                            activeTab: 0,
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    itemId: 'checkoutTabPage',
+                                    title: 'Оформление'
+                                },
+                                {
+                                    xtype: 'panel',
+                                    id: 'attachmentsTabPage',
+                                    title: 'Прикреплённые файлы'
+                                }
+                            ]
                         }
                     ]
                 },

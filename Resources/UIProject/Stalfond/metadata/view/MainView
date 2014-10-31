@@ -150,17 +150,74 @@
                     "designerId": "6e0310e2-3829-40e2-acea-c3d80afea341",
                     "cn": [
                         {
-                            "type": "Ext.form.Label",
+                            "type": "Ext.tab.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "text": "Home View"
+                                "activeTab": 0,
+                                "itemId": "contractTabControl",
+                                "layout|flex": 1,
+                                "width": "100%"
                             },
-                            "name": "MyLabel",
-                            "designerId": "3c8a041c-5502-4ce2-a822-597ddafe4b34"
+                            "name": "MyTabPanel",
+                            "designerId": "8d9d6d8f-e5cf-48ec-9348-76a67b39ccc6",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "checkoutTabPage",
+                                        "title": "Оформление"
+                                    },
+                                    "name": "MyPanel",
+                                    "designerId": "b7ef737b-7827-45d9-8a5c-d204be245a2b",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.tab.Tab",
+                                            "reference": {
+                                                "name": "tabConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "TabConfig",
+                                            "designerId": "1b4492d8-ad3d-4037-b07e-131dc39d0095"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "attachmentsTabPage",
+                                        "title": "Прикреплённые файлы"
+                                    },
+                                    "name": "MyPanel6",
+                                    "designerId": "e3e37d18-8eb3-4b38-9881-e2201eb77030",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.tab.Tab",
+                                            "reference": {
+                                                "name": "tabConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "TabConfig1",
+                                            "designerId": "841f4760-1e24-40cc-a8b6-363a01f9eb0a"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
