@@ -27,6 +27,7 @@ Ext.define('Stalfond.view.MainView', {
         'Ext.form.field.Date',
         'Ext.form.CheckboxGroup',
         'Ext.form.field.Checkbox',
+        'Ext.form.field.File',
         'Ext.grid.Panel',
         'Ext.grid.column.Number',
         'Ext.grid.column.Date',
@@ -568,7 +569,60 @@ Ext.define('Stalfond.view.MainView', {
                                 {
                                     xtype: 'panel',
                                     id: 'attachmentsTabPage',
-                                    title: 'Прикреплённые файлы'
+                                    title: 'Прикреплённые файлы',
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            items: [
+                                                {
+                                                    xtype: 'container',
+                                                    id: 'attachmentContainer',
+                                                    items: [
+                                                        {
+                                                            xtype: 'filefield',
+                                                            fieldLabel: 'Загрузить документ',
+                                                            labelWidth: 200
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'gridpanel',
+                                                    height: 450,
+                                                    title: 'Загруженные документы',
+                                                    columns: [
+                                                        {
+                                                            xtype: 'gridcolumn',
+                                                            dataIndex: 'string',
+                                                            text: 'String'
+                                                        },
+                                                        {
+                                                            xtype: 'numbercolumn',
+                                                            dataIndex: 'number',
+                                                            text: 'Number'
+                                                        },
+                                                        {
+                                                            xtype: 'datecolumn',
+                                                            dataIndex: 'date',
+                                                            text: 'Date'
+                                                        },
+                                                        {
+                                                            xtype: 'booleancolumn',
+                                                            dataIndex: 'bool',
+                                                            text: 'Boolean'
+                                                        }
+                                                    ],
+                                                    dockedItems: [
+                                                        {
+                                                            xtype: 'pagingtoolbar',
+                                                            dock: 'bottom',
+                                                            width: 360,
+                                                            displayInfo: true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -784,7 +838,159 @@ Ext.define('Stalfond.view.MainView', {
                         type: 'vbox',
                         align: 'center',
                         pack: 'center'
-                    }
+                    },
+                    items: [
+                        {
+                            xtype: 'container',
+                            flex: 1,
+                            id: 'reportContainer',
+                            width: '100%',
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    id: 'reportListContainer',
+                                    items: [
+                                        {
+                                            xtype: 'fieldcontainer',
+                                            height: 80,
+                                            id: 'col-left-report',
+                                            minWidth: 300,
+                                            width: '25%',
+                                            items: [
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Дата создания от',
+                                                    labelWidth: 120
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Снилс',
+                                                    labelWidth: 120
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'fieldcontainer',
+                                            height: 80,
+                                            id: 'col-left-report-first',
+                                            minWidth: 180,
+                                            width: '20%',
+                                            items: [
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 180,
+                                                    fieldLabel: 'До',
+                                                    labelWidth: 50
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    margin: 10,
+                                                    width: 180,
+                                                    fieldLabel: 'ШК',
+                                                    labelWidth: 50
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'fieldcontainer',
+                                            height: 80,
+                                            id: 'col-left-report-second',
+                                            minWidth: 180,
+                                            width: '20%',
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    margin: 10,
+                                                    width: 180,
+                                                    fieldLabel: 'Продукт',
+                                                    labelWidth: 50
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'fieldcontainer',
+                                            height: 80,
+                                            id: 'col-left-report-last',
+                                            minWidth: 180,
+                                            width: '20%',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    margin: 5,
+                                                    width: 200,
+                                                    scale: 'medium',
+                                                    text: 'Поиск'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    margin: 5,
+                                                    width: 200,
+                                                    scale: 'medium',
+                                                    text: 'Выбрать всё'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    margin: 5,
+                                                    width: 200,
+                                                    scale: 'medium',
+                                                    text: 'Печать'
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    id: 'reportListGridContainer',
+                                    items: [
+                                        {
+                                            xtype: 'gridpanel',
+                                            height: 450,
+                                            title: 'Таблица договоров',
+                                            columns: [
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'string',
+                                                    text: 'String'
+                                                },
+                                                {
+                                                    xtype: 'numbercolumn',
+                                                    dataIndex: 'number',
+                                                    text: 'Number'
+                                                },
+                                                {
+                                                    xtype: 'datecolumn',
+                                                    dataIndex: 'date',
+                                                    text: 'Date'
+                                                },
+                                                {
+                                                    xtype: 'booleancolumn',
+                                                    dataIndex: 'bool',
+                                                    text: 'Boolean'
+                                                }
+                                            ],
+                                            dockedItems: [
+                                                {
+                                                    xtype: 'pagingtoolbar',
+                                                    dock: 'bottom',
+                                                    width: 360,
+                                                    displayInfo: true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container'
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }

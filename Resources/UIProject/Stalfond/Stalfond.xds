@@ -6,10 +6,10 @@
         },
         "canvasControls": {
             "viewportSize": {
-                "name": "Screen",
-                "builtIn": false,
+                "name": "Large",
+                "builtIn": true,
                 "height": 1024,
-                "width": 1800
+                "width": 1280
             }
         },
         "urlPrefix": "",

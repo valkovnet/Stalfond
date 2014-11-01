@@ -1176,6 +1176,144 @@
                                             "codeClass": null,
                                             "name": "TabConfig1",
                                             "designerId": "841f4760-1e24-40cc-a8b6-363a01f9eb0a"
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyContainer24",
+                                            "designerId": "d2ca893c-0cea-40b6-8312-8cdabd7cef69",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "id": "attachmentContainer"
+                                                    },
+                                                    "name": "MyContainer23",
+                                                    "designerId": "91526e6b-59d4-47f4-9b7e-d9cef1e08b0c",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.File",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fieldLabel": "Загрузить документ",
+                                                                "labelWidth": 200
+                                                            },
+                                                            "name": "MyFileUpload",
+                                                            "designerId": "61a2ef2a-6502-4fd9-9855-353d2c143735"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.Panel",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "height": 450,
+                                                        "title": "Загруженные документы"
+                                                    },
+                                                    "name": "MyGridPanel1",
+                                                    "designerId": "d7f7601d-825e-48b0-9858-b32f4d018c4e",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.grid.column.Column",
+                                                            "reference": {
+                                                                "name": "columns",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "dataIndex": "string",
+                                                                "text": "String"
+                                                            },
+                                                            "name": "MyColumn",
+                                                            "designerId": "ca3015b7-2338-4085-af74-1d2308bec3ea"
+                                                        },
+                                                        {
+                                                            "type": "Ext.grid.column.Number",
+                                                            "reference": {
+                                                                "name": "columns",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "dataIndex": "number",
+                                                                "text": "Number"
+                                                            },
+                                                            "name": "MyNumberColumn",
+                                                            "designerId": "a7a35474-e875-45a2-a40a-0723eaa7d5b0"
+                                                        },
+                                                        {
+                                                            "type": "Ext.grid.column.Date",
+                                                            "reference": {
+                                                                "name": "columns",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "dataIndex": "date",
+                                                                "text": "Date"
+                                                            },
+                                                            "name": "MyDateColumn",
+                                                            "designerId": "2cdb29b0-42db-4f2f-8d3b-9b8b51d0f52b"
+                                                        },
+                                                        {
+                                                            "type": "Ext.grid.column.Boolean",
+                                                            "reference": {
+                                                                "name": "columns",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "dataIndex": "bool",
+                                                                "text": "Boolean"
+                                                            },
+                                                            "name": "MyBooleanColumn",
+                                                            "designerId": "4903934f-340a-497b-8ebd-7a5de5125192"
+                                                        },
+                                                        {
+                                                            "type": "Ext.grid.View",
+                                                            "reference": {
+                                                                "name": "viewConfig",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "name": "MyGridView",
+                                                            "designerId": "decbf01e-9b45-4c31-83f0-531115f64e61"
+                                                        },
+                                                        {
+                                                            "type": "Ext.toolbar.Paging",
+                                                            "reference": {
+                                                                "name": "dockedItems",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "displayInfo": true,
+                                                                "dock": "bottom",
+                                                                "width": 360
+                                                            },
+                                                            "name": "MyPagingToolbar",
+                                                            "designerId": "b77eb52b-cf3c-43ed-b401-e1a7f6940421"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -1671,7 +1809,367 @@
                         "title": "Отчёты"
                     },
                     "name": "MyPanel5",
-                    "designerId": "bdce8a33-1e17-42fa-bdbd-f2e50d0d22da"
+                    "designerId": "bdce8a33-1e17-42fa-bdbd-f2e50d0d22da",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "reportContainer",
+                                "layout|flex": 1,
+                                "width": "100%"
+                            },
+                            "name": "MyContainer19",
+                            "designerId": "f0f9e94f-0881-4cf2-9342-1f372c7c9b48",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "reportListContainer"
+                                    },
+                                    "name": "MyContainer20",
+                                    "designerId": "e20f3a5a-2481-42e9-ba67-cf34dfa5ae2e",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.FieldContainer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": null,
+                                                "height": 80,
+                                                "id": "col-left-report",
+                                                "minWidth": 300,
+                                                "width": "25%"
+                                            },
+                                            "name": "MyFieldContainer6",
+                                            "designerId": "79db3d74-4bd7-4b0a-b769-7fb0be79c0cd",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Date",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Дата создания от",
+                                                        "labelWidth": 120,
+                                                        "margin": 10,
+                                                        "width": 250
+                                                    },
+                                                    "name": "MyDateField3",
+                                                    "designerId": "5a82a321-31a5-42ab-b60d-e4b3634ea9c5"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Снилс",
+                                                        "labelWidth": 120,
+                                                        "margin": 10,
+                                                        "width": 250
+                                                    },
+                                                    "name": "MyTextField10",
+                                                    "designerId": "6ed1e0fa-d852-46b2-98aa-fdf8a2d5e585"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldContainer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": null,
+                                                "height": 80,
+                                                "id": "col-left-report-first",
+                                                "minWidth": 180,
+                                                "width": "20%"
+                                            },
+                                            "name": "MyFieldContainer7",
+                                            "designerId": "7d3a1717-c8fd-40b7-88a9-b8b13c653e0b",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Date",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "До",
+                                                        "labelWidth": 50,
+                                                        "margin": 10,
+                                                        "width": 180
+                                                    },
+                                                    "name": "MyDateField3",
+                                                    "designerId": "b4b1d190-c367-4874-8fe6-5021e5f482b0"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "ШК",
+                                                        "labelWidth": 50,
+                                                        "margin": 10,
+                                                        "width": 180
+                                                    },
+                                                    "name": "MyTextField10",
+                                                    "designerId": "c69bc789-5341-4167-af42-6f648fabc8ac"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldContainer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": null,
+                                                "height": 80,
+                                                "id": "col-left-report-second",
+                                                "minWidth": 180,
+                                                "width": "20%"
+                                            },
+                                            "name": "MyFieldContainer8",
+                                            "designerId": "206ae017-e78f-4647-9b85-739a5797baf0",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Продукт",
+                                                        "labelWidth": 50,
+                                                        "margin": 10,
+                                                        "width": 180
+                                                    },
+                                                    "name": "MyTextField10",
+                                                    "designerId": "b698f72e-1f9a-4c42-8342-c134b5f09bf1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldContainer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": null,
+                                                "height": 80,
+                                                "id": "col-left-report-last",
+                                                "minWidth": 180,
+                                                "width": "20%"
+                                            },
+                                            "name": "MyFieldContainer9",
+                                            "designerId": "30e350c2-b6bd-4cfa-99a5-c99049f06251",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "margin": 5,
+                                                        "scale": "medium",
+                                                        "text": "Поиск",
+                                                        "width": 200
+                                                    },
+                                                    "name": "MyButton6",
+                                                    "designerId": "d644c96f-8436-4744-9906-9096b7a07816"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "margin": 5,
+                                                        "scale": "medium",
+                                                        "text": "Выбрать всё",
+                                                        "width": 200
+                                                    },
+                                                    "name": "MyButton7",
+                                                    "designerId": "14a11f7d-e4de-4483-aa0f-3c4e98e70c14"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "margin": 5,
+                                                        "scale": "medium",
+                                                        "text": "Печать",
+                                                        "width": 200
+                                                    },
+                                                    "name": "MyButton8",
+                                                    "designerId": "544b1da7-9810-46c9-bf9b-4e5226fec318"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "reportListGridContainer"
+                                    },
+                                    "name": "MyContainer21",
+                                    "designerId": "6bfd617b-b8f0-4729-9b6e-ed039dfb70e4",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "height": 450,
+                                                "title": "Таблица договоров"
+                                            },
+                                            "name": "MyGridPanel",
+                                            "designerId": "8aa56d6c-940b-4465-b02f-d17744661f69",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "string",
+                                                        "text": "String"
+                                                    },
+                                                    "name": "MyColumn",
+                                                    "designerId": "8ddeb35c-ae21-406b-8cb4-cd1576bc857f"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Number",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "number",
+                                                        "text": "Number"
+                                                    },
+                                                    "name": "MyNumberColumn",
+                                                    "designerId": "d8d947bf-8627-4462-b533-95390ddef78d"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Date",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "date",
+                                                        "text": "Date"
+                                                    },
+                                                    "name": "MyDateColumn",
+                                                    "designerId": "1bcbcae3-a923-41f4-89b2-0574ea6b63f3"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Boolean",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "bool",
+                                                        "text": "Boolean"
+                                                    },
+                                                    "name": "MyBooleanColumn",
+                                                    "designerId": "b2298604-1f2b-474c-a8ce-85b6b72beedf"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyGridView",
+                                                    "designerId": "1cc89bb7-3276-4bbf-83e7-5cc16f59f809"
+                                                },
+                                                {
+                                                    "type": "Ext.toolbar.Paging",
+                                                    "reference": {
+                                                        "name": "dockedItems",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "displayInfo": true,
+                                                        "dock": "bottom",
+                                                        "width": 360
+                                                    },
+                                                    "name": "MyPagingToolbar",
+                                                    "designerId": "5c4121fa-54a2-4fd0-a084-cedbfe170611"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyContainer22",
+                                    "designerId": "c68fd75c-84ab-403f-890d-8f7b678f904d"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
