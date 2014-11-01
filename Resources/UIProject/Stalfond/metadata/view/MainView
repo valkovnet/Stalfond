@@ -188,6 +188,146 @@
                                             "codeClass": null,
                                             "name": "TabConfig",
                                             "designerId": "1b4492d8-ad3d-4037-b07e-131dc39d0095"
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Toolbar",
+                                            "reference": {
+                                                "name": "dockedItems",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dock": "top",
+                                                "itemId": "contractToolbar",
+                                                "margin": 3
+                                            },
+                                            "name": "MyToolbar",
+                                            "designerId": "cc96139f-11a8-45ae-a6e9-993444a790e2",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "scale": "medium",
+                                                        "text": "Новый"
+                                                    },
+                                                    "name": "MyButton1",
+                                                    "designerId": "546a810d-6322-40e2-8c34-44d671d47d5a"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "scale": "medium",
+                                                        "text": "Перевести в статус \"На обзвоне\""
+                                                    },
+                                                    "name": "MyButton2",
+                                                    "designerId": "c373356f-daa4-4d24-a59e-9874e315ef18"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "scale": "medium",
+                                                        "text": "Печать"
+                                                    },
+                                                    "name": "MyButton3",
+                                                    "designerId": "0ac13fa7-93a7-4fba-b6ed-f399e28b7cd1",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.menu.Menu",
+                                                            "reference": {
+                                                                "name": "menu",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "printMenu"
+                                                            },
+                                                            "name": "MyMenu1",
+                                                            "designerId": "5d36d5f6-1c54-44d2-93e7-76275f76cda2",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.menu.Item",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "text": "Напечатать договор"
+                                                                    },
+                                                                    "name": "MyMenuItem3",
+                                                                    "designerId": "5463ee9a-c2b1-4a33-bcf3-118bb9c4daf8"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "scale": "medium",
+                                                        "text": "Сохранить"
+                                                    },
+                                                    "name": "MyButton4",
+                                                    "designerId": "7896f193-5576-41b1-9731-1509d88d261d"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "id": "btn-annuler",
+                                                        "itemId": "annuler",
+                                                        "layout|flex": null,
+                                                        "margin": null,
+                                                        "scale": "medium",
+                                                        "text": "Аннулировать"
+                                                    },
+                                                    "name": "MyButton5",
+                                                    "designerId": "aa81072e-27fc-435e-8fd9-5d63fb27db1d"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "dockedItems",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dock": "top",
+                                                "height": "100%",
+                                                "itemId": "conrtactCheckoutContainer"
+                                            },
+                                            "name": "MyContainer1",
+                                            "designerId": "f042000d-c337-4796-b507-67da084a14af"
                                         }
                                     ]
                                 },

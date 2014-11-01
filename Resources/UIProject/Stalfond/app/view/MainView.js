@@ -23,6 +23,7 @@ Ext.define('Stalfond.view.MainView', {
         'Ext.menu.Item',
         'Ext.tab.Panel',
         'Ext.tab.Tab',
+        'Ext.toolbar.Toolbar',
         'Ext.form.Label'
     ],
 
@@ -95,7 +96,60 @@ Ext.define('Stalfond.view.MainView', {
                                 {
                                     xtype: 'panel',
                                     itemId: 'checkoutTabPage',
-                                    title: 'Оформление'
+                                    title: 'Оформление',
+                                    dockedItems: [
+                                        {
+                                            xtype: 'toolbar',
+                                            dock: 'top',
+                                            itemId: 'contractToolbar',
+                                            margin: 3,
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    scale: 'medium',
+                                                    text: 'Новый'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    scale: 'medium',
+                                                    text: 'Перевести в статус "На обзвоне"'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    scale: 'medium',
+                                                    text: 'Печать',
+                                                    menu: {
+                                                        xtype: 'menu',
+                                                        itemId: 'printMenu',
+                                                        items: [
+                                                            {
+                                                                xtype: 'menuitem',
+                                                                text: 'Напечатать договор'
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    scale: 'medium',
+                                                    text: 'Сохранить'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    id: 'btn-annuler',
+                                                    itemId: 'annuler',
+                                                    scale: 'medium',
+                                                    text: 'Аннулировать'
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            dock: 'top',
+                                            height: '100%',
+                                            itemId: 'conrtactCheckoutContainer'
+                                        }
+                                    ]
                                 },
                                 {
                                     xtype: 'panel',

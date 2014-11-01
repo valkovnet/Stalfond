@@ -1,0 +1,7 @@
+#btn-annuler {
+    position: absolute !important; 
+    width:200px !important;    
+    float:right !important;    
+    right: 0px !important;    
+    left: auto  !important;
+}
