@@ -25,6 +25,7 @@ Ext.define('Stalfond.view.MainView', {
         'Ext.tab.Tab',
         'Ext.toolbar.Toolbar',
         'Ext.form.FieldContainer',
+        'Ext.form.field.ComboBox',
         'Ext.form.field.Date',
         'Ext.form.Label'
     ],
@@ -154,7 +155,7 @@ Ext.define('Stalfond.view.MainView', {
                                             items: [
                                                 {
                                                     xtype: 'container',
-                                                    height: 80,
+                                                    height: 160,
                                                     id: 'col-left',
                                                     margin: '',
                                                     width: '50%',
@@ -168,18 +169,42 @@ Ext.define('Stalfond.view.MainView', {
                                                             xtype: 'fieldcontainer',
                                                             flex: 1,
                                                             height: 120,
+                                                            margin: 10,
                                                             width: '50%',
                                                             items: [
                                                                 {
                                                                     xtype: 'textfield',
                                                                     minWidth: 400,
+                                                                    width: '100%',
                                                                     fieldLabel: '№ договора',
                                                                     labelWidth: 150
                                                                 },
                                                                 {
                                                                     xtype: 'textfield',
                                                                     minWidth: 400,
+                                                                    width: '100%',
                                                                     fieldLabel: 'Фимилия',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Имя',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Отчество',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Пол',
                                                                     labelWidth: 150
                                                                 }
                                                             ]
@@ -188,7 +213,7 @@ Ext.define('Stalfond.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'container',
-                                                    height: 80,
+                                                    height: 160,
                                                     id: 'col-right',
                                                     width: '50%',
                                                     layout: {
@@ -201,23 +226,91 @@ Ext.define('Stalfond.view.MainView', {
                                                             xtype: 'fieldcontainer',
                                                             flex: 1,
                                                             height: 120,
+                                                            margin: 10,
                                                             width: '50%',
                                                             items: [
                                                                 {
                                                                     xtype: 'datefield',
                                                                     minWidth: 400,
+                                                                    width: '100%',
                                                                     fieldLabel: 'Дата договора',
                                                                     labelWidth: 150
                                                                 },
                                                                 {
                                                                     xtype: 'textfield',
                                                                     minWidth: 400,
-                                                                    fieldLabel: 'Фамилия при прожд.',
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Фамилия при рожд.',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Имя при рожд.',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Отчество при рожд.',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'datefield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Дата рождения',
                                                                     labelWidth: 150
                                                                 }
                                                             ]
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    xtype: 'fieldcontainer',
+                                                    height: 24,
+                                                    width: '100%',
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            margin: '0 50 0 10',
+                                                            padding: '',
+                                                            width: 800,
+                                                            fieldLabel: 'Место рождения',
+                                                            labelWidth: 150
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    height: 24,
+                                                    id: 'col-left-first',
+                                                    width: '50%',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldcontainer',
+                                                            margin: 10,
+                                                            width: '100%',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    padding: '',
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Серия паспорта',
+                                                                    labelWidth: 150
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    height: 100,
+                                                    id: 'col-right-first',
+                                                    width: '50%'
                                                 }
                                             ]
                                         }
