@@ -337,117 +337,248 @@
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
-                                                    "userConfig": {
-                                                        "container|align": "stretch",
-                                                        "container|pack": "end",
-                                                        "container|padding": null,
-                                                        "height": 160,
-                                                        "id": "col-left",
-                                                        "layout": "hbox",
-                                                        "margin": "",
-                                                        "width": "50%"
-                                                    },
-                                                    "name": "MyContainer3",
-                                                    "designerId": "a1cc1976-623f-42cb-8205-70920ddb6d49",
+                                                    "name": "MyContainer11",
+                                                    "designerId": "b4e84f93-64e7-4c90-a934-434e0a01c904",
                                                     "cn": [
                                                         {
-                                                            "type": "Ext.form.FieldContainer",
+                                                            "type": "Ext.container.Container",
                                                             "reference": {
                                                                 "name": "items",
                                                                 "type": "array"
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fieldLabel": null,
-                                                                "height": 120,
-                                                                "layout|flex": 1,
-                                                                "margin": 10,
+                                                                "container|align": "stretch",
+                                                                "container|pack": "end",
+                                                                "container|padding": null,
+                                                                "height": 160,
+                                                                "id": "col-left",
+                                                                "layout": "hbox",
+                                                                "margin": "",
                                                                 "width": "50%"
                                                             },
-                                                            "name": "MyFieldContainer",
-                                                            "designerId": "99755a0f-554e-4b04-b395-6ee57ebec6db",
+                                                            "name": "MyContainer3",
+                                                            "designerId": "a1cc1976-623f-42cb-8205-70920ddb6d49",
                                                             "cn": [
                                                                 {
-                                                                    "type": "Ext.form.field.Text",
+                                                                    "type": "Ext.form.FieldContainer",
                                                                     "reference": {
                                                                         "name": "items",
                                                                         "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "fieldLabel": "№ договора",
-                                                                        "labelWidth": 150,
-                                                                        "margin": null,
-                                                                        "minWidth": 400,
-                                                                        "padding": null,
-                                                                        "width": "100%"
+                                                                        "fieldLabel": null,
+                                                                        "height": 120,
+                                                                        "layout|flex": 1,
+                                                                        "margin": 10,
+                                                                        "width": "50%"
                                                                     },
-                                                                    "name": "MyTextField",
-                                                                    "designerId": "f0d7aa4a-92c4-415c-becc-0cadb9d73996"
-                                                                },
+                                                                    "name": "MyFieldContainer",
+                                                                    "designerId": "99755a0f-554e-4b04-b395-6ee57ebec6db",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "№ договора",
+                                                                                "labelWidth": 150,
+                                                                                "margin": null,
+                                                                                "minWidth": 400,
+                                                                                "padding": null,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField",
+                                                                            "designerId": "f0d7aa4a-92c4-415c-becc-0cadb9d73996"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Фимилия",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField1",
+                                                                            "designerId": "339efa38-9cf1-4254-a94b-25c3758cad8d"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Имя",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField3",
+                                                                            "designerId": "7d8f7bfa-56b6-42ef-8982-049a0b274b49"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Отчество",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField4",
+                                                                            "designerId": "f8abefc4-189f-4028-9c3a-eaf3ca147591"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.ComboBox",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Пол",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyComboBox",
+                                                                            "designerId": "75929399-d66f-4e79-876a-f952a6f5dcdf"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.container.Container",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "container|align": "stretch",
+                                                                "container|pack": "end",
+                                                                "height": 160,
+                                                                "id": "col-right",
+                                                                "layout": "hbox",
+                                                                "width": "50%"
+                                                            },
+                                                            "name": "MyContainer2",
+                                                            "designerId": "c97ee1a8-cb82-43fe-ad2d-f5ef0f8e4742",
+                                                            "cn": [
                                                                 {
-                                                                    "type": "Ext.form.field.Text",
+                                                                    "type": "Ext.form.FieldContainer",
                                                                     "reference": {
                                                                         "name": "items",
                                                                         "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "fieldLabel": "Фимилия",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
+                                                                        "fieldLabel": null,
+                                                                        "height": 120,
+                                                                        "layout|flex": 1,
+                                                                        "margin": 10,
+                                                                        "width": "50%"
                                                                     },
-                                                                    "name": "MyTextField1",
-                                                                    "designerId": "339efa38-9cf1-4254-a94b-25c3758cad8d"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.form.field.Text",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Имя",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyTextField3",
-                                                                    "designerId": "7d8f7bfa-56b6-42ef-8982-049a0b274b49"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.form.field.Text",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Отчество",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyTextField4",
-                                                                    "designerId": "f8abefc4-189f-4028-9c3a-eaf3ca147591"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.form.field.ComboBox",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Пол",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyComboBox",
-                                                                    "designerId": "75929399-d66f-4e79-876a-f952a6f5dcdf"
+                                                                    "name": "MyFieldContainer1",
+                                                                    "designerId": "6e0d1890-6a82-4329-bed6-b2a584189cb5",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.form.field.Date",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Дата договора",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyDateField",
+                                                                            "designerId": "f9d6d60f-8898-47f2-8610-ebd50e0a9239"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Фамилия при рожд.",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField2",
+                                                                            "designerId": "6e8c5807-1450-4fcd-92e3-6b5a35d5172e"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Имя при рожд.",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField5",
+                                                                            "designerId": "1a5925ee-c606-422a-be52-bf2dbc3213f8"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Отчество при рожд.",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField6",
+                                                                            "designerId": "5d53faaf-cbd7-41ef-b53b-b2b4bdcacb8f"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.Date",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Дата рождения",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyDateField1",
+                                                                            "designerId": "c48f7935-f5dc-4851-afda-5edbbec1c5d5"
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         }
@@ -461,125 +592,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "container|align": "stretch",
-                                                        "container|pack": "end",
-                                                        "height": 160,
-                                                        "id": "col-right",
-                                                        "layout": "hbox",
-                                                        "width": "50%"
-                                                    },
-                                                    "name": "MyContainer2",
-                                                    "designerId": "c97ee1a8-cb82-43fe-ad2d-f5ef0f8e4742",
-                                                    "cn": [
-                                                        {
-                                                            "type": "Ext.form.FieldContainer",
-                                                            "reference": {
-                                                                "name": "items",
-                                                                "type": "array"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "fieldLabel": null,
-                                                                "height": 120,
-                                                                "layout|flex": 1,
-                                                                "margin": 10,
-                                                                "width": "50%"
-                                                            },
-                                                            "name": "MyFieldContainer1",
-                                                            "designerId": "6e0d1890-6a82-4329-bed6-b2a584189cb5",
-                                                            "cn": [
-                                                                {
-                                                                    "type": "Ext.form.field.Date",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Дата договора",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyDateField",
-                                                                    "designerId": "f9d6d60f-8898-47f2-8610-ebd50e0a9239"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.form.field.Text",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Фамилия при рожд.",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyTextField2",
-                                                                    "designerId": "6e8c5807-1450-4fcd-92e3-6b5a35d5172e"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.form.field.Text",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Имя при рожд.",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyTextField5",
-                                                                    "designerId": "1a5925ee-c606-422a-be52-bf2dbc3213f8"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.form.field.Text",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Отчество при рожд.",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyTextField6",
-                                                                    "designerId": "5d53faaf-cbd7-41ef-b53b-b2b4bdcacb8f"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.form.field.Date",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Дата рождения",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyDateField1",
-                                                                    "designerId": "c48f7935-f5dc-4851-afda-5edbbec1c5d5"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "Ext.container.Container",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
+                                                        "height": 26,
                                                         "id": "col-center",
                                                         "margin": "0 20 0 0"
                                                     },
@@ -613,53 +626,122 @@
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
-                                                    "userConfig": {
-                                                        "container|align": "stretch",
-                                                        "container|pack": "end",
-                                                        "container|padding": null,
-                                                        "height": 40,
-                                                        "id": "col-left-first",
-                                                        "layout": "hbox",
-                                                        "margin": "",
-                                                        "width": "50%"
-                                                    },
-                                                    "name": "MyContainer4",
-                                                    "designerId": "c3a8255e-6f41-4621-b747-0e961c032706",
+                                                    "name": "MyContainer12",
+                                                    "designerId": "6400919d-e224-4395-9cdb-9bcbb1ef416e",
                                                     "cn": [
                                                         {
-                                                            "type": "Ext.form.FieldContainer",
+                                                            "type": "Ext.container.Container",
                                                             "reference": {
                                                                 "name": "items",
                                                                 "type": "array"
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fieldLabel": null,
-                                                                "height": 120,
-                                                                "layout|flex": 1,
-                                                                "margin": 10,
+                                                                "container|align": "stretch",
+                                                                "container|pack": "end",
+                                                                "container|padding": "-5 0",
+                                                                "height": 35,
+                                                                "id": "col-left-first",
+                                                                "layout": "hbox",
+                                                                "margin": "",
                                                                 "width": "50%"
                                                             },
-                                                            "name": "MyFieldContainer",
-                                                            "designerId": "116ee463-28ff-47ae-a3f9-cc213b8c7a91",
+                                                            "name": "MyContainer4",
+                                                            "designerId": "c3a8255e-6f41-4621-b747-0e961c032706",
                                                             "cn": [
                                                                 {
-                                                                    "type": "Ext.form.field.Text",
+                                                                    "type": "Ext.form.FieldContainer",
                                                                     "reference": {
                                                                         "name": "items",
                                                                         "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "fieldLabel": "Паспорт серия:",
-                                                                        "labelWidth": 150,
-                                                                        "margin": null,
-                                                                        "minWidth": 400,
-                                                                        "padding": null,
-                                                                        "width": "100%"
+                                                                        "fieldLabel": null,
+                                                                        "height": 30,
+                                                                        "layout|flex": 1,
+                                                                        "margin": 10,
+                                                                        "width": "50%"
                                                                     },
-                                                                    "name": "MyTextField",
-                                                                    "designerId": "c1897916-ffb4-492c-8b1e-0fbb536d3b11"
+                                                                    "name": "MyFieldContainer",
+                                                                    "designerId": "116ee463-28ff-47ae-a3f9-cc213b8c7a91",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Паспорт серия:",
+                                                                                "labelWidth": 150,
+                                                                                "margin": null,
+                                                                                "minWidth": 400,
+                                                                                "padding": null,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField",
+                                                                            "designerId": "c1897916-ffb4-492c-8b1e-0fbb536d3b11"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.container.Container",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "container|align": "stretch",
+                                                                "container|pack": "end",
+                                                                "container|padding": "-5 0",
+                                                                "height": 35,
+                                                                "id": "col-right-first",
+                                                                "layout": "hbox",
+                                                                "width": "50%"
+                                                            },
+                                                            "name": "MyContainer5",
+                                                            "designerId": "29a4d9bf-0674-4216-b7d6-0e0a40d3f1a0",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.form.FieldContainer",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fieldLabel": null,
+                                                                        "height": 120,
+                                                                        "layout|flex": 1,
+                                                                        "margin": 10,
+                                                                        "width": "50%"
+                                                                    },
+                                                                    "name": "MyFieldContainer1",
+                                                                    "designerId": "214b8d8e-bf25-4ff4-a031-573f65ac7168",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Паспорт номер",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "padding": "",
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField9",
+                                                                            "designerId": "62582869-6299-4b6f-b365-3aca46e8b47e"
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         }
@@ -673,61 +755,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "container|align": "stretch",
-                                                        "container|pack": "end",
-                                                        "height": 40,
-                                                        "id": "col-right-first",
-                                                        "layout": "hbox",
-                                                        "width": "50%"
-                                                    },
-                                                    "name": "MyContainer5",
-                                                    "designerId": "29a4d9bf-0674-4216-b7d6-0e0a40d3f1a0",
-                                                    "cn": [
-                                                        {
-                                                            "type": "Ext.form.FieldContainer",
-                                                            "reference": {
-                                                                "name": "items",
-                                                                "type": "array"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "fieldLabel": null,
-                                                                "height": 120,
-                                                                "layout|flex": 1,
-                                                                "margin": 10,
-                                                                "width": "50%"
-                                                            },
-                                                            "name": "MyFieldContainer1",
-                                                            "designerId": "214b8d8e-bf25-4ff4-a031-573f65ac7168",
-                                                            "cn": [
-                                                                {
-                                                                    "type": "Ext.form.field.Text",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Паспорт номер",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyTextField9",
-                                                                    "designerId": "62582869-6299-4b6f-b365-3aca46e8b47e"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "Ext.container.Container",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
+                                                        "height": 28,
                                                         "id": "col-center-first",
                                                         "margin": "0 20 0 0"
                                                     },
@@ -762,50 +790,68 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "container|align": "stretch",
-                                                        "container|pack": "end",
-                                                        "container|padding": null,
-                                                        "height": 40,
-                                                        "id": "col-left-second",
-                                                        "layout": "hbox",
-                                                        "margin": "",
-                                                        "width": "50%"
+                                                        "height": 30
                                                     },
-                                                    "name": "MyContainer7",
-                                                    "designerId": "29828007-8b27-41e4-970e-9a3d0881d35e",
+                                                    "name": "MyContainer13",
+                                                    "designerId": "4185c107-3be0-42e0-8bc3-324414c87b49",
                                                     "cn": [
                                                         {
-                                                            "type": "Ext.form.FieldContainer",
+                                                            "type": "Ext.container.Container",
                                                             "reference": {
                                                                 "name": "items",
                                                                 "type": "array"
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fieldLabel": null,
-                                                                "height": 120,
-                                                                "layout|flex": 1,
-                                                                "margin": 10,
+                                                                "container|align": "stretch",
+                                                                "container|pack": "end",
+                                                                "container|padding": "-10 0",
+                                                                "height": 30,
+                                                                "id": "col-left-second",
+                                                                "layout": "hbox",
+                                                                "margin": "",
                                                                 "width": "50%"
                                                             },
-                                                            "name": "MyFieldContainer",
-                                                            "designerId": "96b845af-9696-45a6-bc20-ea7a5460b7e6",
+                                                            "name": "MyContainer7",
+                                                            "designerId": "29828007-8b27-41e4-970e-9a3d0881d35e",
                                                             "cn": [
                                                                 {
-                                                                    "type": "Ext.form.field.Date",
+                                                                    "type": "Ext.form.FieldContainer",
                                                                     "reference": {
                                                                         "name": "items",
                                                                         "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "fieldLabel": "Дата выдачи",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
+                                                                        "fieldLabel": null,
+                                                                        "height": 26,
+                                                                        "layout|flex": 1,
+                                                                        "margin": 10,
+                                                                        "padding": "-10 0",
+                                                                        "width": "50%"
                                                                     },
-                                                                    "name": "MyDateField2",
-                                                                    "designerId": "7113afde-392b-49c5-8a6d-4ebc913b0e7f"
+                                                                    "name": "MyFieldContainer",
+                                                                    "designerId": "96b845af-9696-45a6-bc20-ea7a5460b7e6",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.form.field.Date",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Дата выдачи",
+                                                                                "labelWidth": 150,
+                                                                                "margin": null,
+                                                                                "minWidth": 400,
+                                                                                "padding": "-8 0",
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyDateField2",
+                                                                            "designerId": "7113afde-392b-49c5-8a6d-4ebc913b0e7f"
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         }
@@ -819,6 +865,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "height": 26,
                                                         "id": "col-center-second",
                                                         "margin": "0 20 0 0"
                                                     },
@@ -852,67 +899,151 @@
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
-                                                    "userConfig": {
-                                                        "container|align": "stretch",
-                                                        "container|pack": "end",
-                                                        "container|padding": null,
-                                                        "height": 70,
-                                                        "id": "col-left-last",
-                                                        "layout": "hbox",
-                                                        "margin": "",
-                                                        "width": "50%"
-                                                    },
-                                                    "name": "MyContainer9",
-                                                    "designerId": "d82a9f41-8d4c-4935-8e79-a10a52b646c6",
+                                                    "name": "MyContainer14",
+                                                    "designerId": "2f1786f1-a3ee-486b-9f9b-bfc9145d5275",
                                                     "cn": [
                                                         {
-                                                            "type": "Ext.form.FieldContainer",
+                                                            "type": "Ext.container.Container",
                                                             "reference": {
                                                                 "name": "items",
                                                                 "type": "array"
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fieldLabel": null,
-                                                                "height": 120,
-                                                                "layout|flex": 1,
-                                                                "margin": 10,
+                                                                "container|align": "stretch",
+                                                                "container|pack": "end",
+                                                                "container|padding": "-10 0",
+                                                                "height": 70,
+                                                                "id": "col-left-last",
+                                                                "layout": "hbox",
+                                                                "margin": "",
                                                                 "width": "50%"
                                                             },
-                                                            "name": "MyFieldContainer",
-                                                            "designerId": "390e407f-b3ea-45b2-99cf-3ad3ac133b61",
+                                                            "name": "MyContainer9",
+                                                            "designerId": "d82a9f41-8d4c-4935-8e79-a10a52b646c6",
                                                             "cn": [
                                                                 {
-                                                                    "type": "Ext.form.field.Text",
+                                                                    "type": "Ext.form.FieldContainer",
                                                                     "reference": {
                                                                         "name": "items",
                                                                         "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "fieldLabel": "Мобильный телефон",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
+                                                                        "fieldLabel": null,
+                                                                        "height": 120,
+                                                                        "layout|flex": 1,
+                                                                        "margin": 10,
+                                                                        "width": "50%"
                                                                     },
-                                                                    "name": "MyTextField3",
-                                                                    "designerId": "31ee431e-edf6-45da-ad7e-7321a1f3b1b0"
-                                                                },
+                                                                    "name": "MyFieldContainer",
+                                                                    "designerId": "390e407f-b3ea-45b2-99cf-3ad3ac133b61",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Мобильный телефон",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField3",
+                                                                            "designerId": "31ee431e-edf6-45da-ad7e-7321a1f3b1b0"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.ComboBox",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Время д/св.",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyComboBox",
+                                                                            "designerId": "70ad2ddc-9998-413f-8e26-53c605569f79"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.container.Container",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "container|align": "stretch",
+                                                                "container|pack": "end",
+                                                                "container|padding": "-10 0",
+                                                                "height": 70,
+                                                                "id": "col-right-last",
+                                                                "layout": "hbox",
+                                                                "width": "50%"
+                                                            },
+                                                            "name": "MyContainer10",
+                                                            "designerId": "4e6a3017-a224-41a3-ac1d-a6c097cf7fd7",
+                                                            "cn": [
                                                                 {
-                                                                    "type": "Ext.form.field.ComboBox",
+                                                                    "type": "Ext.form.FieldContainer",
                                                                     "reference": {
                                                                         "name": "items",
                                                                         "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "fieldLabel": "Время д/св.",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
+                                                                        "fieldLabel": null,
+                                                                        "height": 120,
+                                                                        "layout|flex": 1,
+                                                                        "margin": 10,
+                                                                        "width": "50%"
                                                                     },
-                                                                    "name": "MyComboBox",
-                                                                    "designerId": "70ad2ddc-9998-413f-8e26-53c605569f79"
+                                                                    "name": "MyFieldContainer1",
+                                                                    "designerId": "12c3d47e-261f-4351-aacf-48f4e5c64e5e",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Доп. телефон",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField2",
+                                                                            "designerId": "dcbc2d1f-2232-4af0-b964-b29f159200d9"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.Text",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "E-Mail",
+                                                                                "labelWidth": 150,
+                                                                                "minWidth": 400,
+                                                                                "width": "100%"
+                                                                            },
+                                                                            "name": "MyTextField5",
+                                                                            "designerId": "1094acc8-7b41-4d52-8141-53e0a2ea6bcd"
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         }
@@ -925,65 +1056,94 @@
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
-                                                    "userConfig": {
-                                                        "container|align": "stretch",
-                                                        "container|pack": "end",
-                                                        "height": 70,
-                                                        "id": "col-right-last",
-                                                        "layout": "hbox",
-                                                        "width": "50%"
-                                                    },
-                                                    "name": "MyContainer10",
-                                                    "designerId": "4e6a3017-a224-41a3-ac1d-a6c097cf7fd7",
+                                                    "name": "MyContainer15",
+                                                    "designerId": "1ef2f437-e90f-45e3-abe8-b748ac36163d",
                                                     "cn": [
                                                         {
-                                                            "type": "Ext.form.FieldContainer",
+                                                            "type": "Ext.container.Container",
                                                             "reference": {
                                                                 "name": "items",
                                                                 "type": "array"
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fieldLabel": null,
-                                                                "height": 120,
-                                                                "layout|flex": 1,
-                                                                "margin": 10,
+                                                                "container|align": "stretch",
+                                                                "container|pack": "end",
+                                                                "container|padding": "-10 0",
+                                                                "height": 70,
+                                                                "id": "col-left-last1",
+                                                                "layout": "hbox",
+                                                                "margin": "",
                                                                 "width": "50%"
                                                             },
-                                                            "name": "MyFieldContainer1",
-                                                            "designerId": "12c3d47e-261f-4351-aacf-48f4e5c64e5e",
+                                                            "name": "MyContainer9",
+                                                            "designerId": "0430fbbd-1210-4a2b-8511-6320e5f270cd",
                                                             "cn": [
                                                                 {
-                                                                    "type": "Ext.form.field.Text",
+                                                                    "type": "Ext.form.FieldContainer",
                                                                     "reference": {
                                                                         "name": "items",
                                                                         "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "fieldLabel": "Фамилия при рожд.",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
+                                                                        "fieldLabel": null,
+                                                                        "height": 120,
+                                                                        "layout|flex": 1,
+                                                                        "margin": 10,
+                                                                        "width": "50%"
                                                                     },
-                                                                    "name": "MyTextField2",
-                                                                    "designerId": "dcbc2d1f-2232-4af0-b964-b29f159200d9"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.form.field.Text",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "fieldLabel": "Имя при рожд.",
-                                                                        "labelWidth": 150,
-                                                                        "minWidth": 400,
-                                                                        "width": "100%"
-                                                                    },
-                                                                    "name": "MyTextField5",
-                                                                    "designerId": "1094acc8-7b41-4d52-8141-53e0a2ea6bcd"
+                                                                    "name": "MyFieldContainer",
+                                                                    "designerId": "a0ae5c55-1d9e-4fb6-a022-b6228adc3f5b",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.form.CheckboxGroup",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "fieldLabel": "Тип связи",
+                                                                                "width": "50%"
+                                                                            },
+                                                                            "name": "MyCheckboxGroup",
+                                                                            "designerId": "2d8fe2f6-ab0c-47d4-b933-260f7a0fbb61",
+                                                                            "cn": [
+                                                                                {
+                                                                                    "type": "Ext.form.field.Checkbox",
+                                                                                    "reference": {
+                                                                                        "name": "items",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "boxLabel": "E-Mail",
+                                                                                        "fieldLabel": null,
+                                                                                        "width": 100
+                                                                                    },
+                                                                                    "name": "MyCheckbox",
+                                                                                    "designerId": "75b53dc0-32f9-41a3-8ae6-5ccc6cc86bce"
+                                                                                },
+                                                                                {
+                                                                                    "type": "Ext.form.field.Checkbox",
+                                                                                    "reference": {
+                                                                                        "name": "items",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "boxLabel": "Почтовое отправление",
+                                                                                        "fieldLabel": null,
+                                                                                        "labelWidth": null,
+                                                                                        "width": 180
+                                                                                    },
+                                                                                    "name": "MyCheckbox1",
+                                                                                    "designerId": "1bab8d7e-13b7-46e4-b853-cee9fb635dcc"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         }
