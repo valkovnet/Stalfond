@@ -24,6 +24,8 @@ Ext.define('Stalfond.view.MainView', {
         'Ext.tab.Panel',
         'Ext.tab.Tab',
         'Ext.toolbar.Toolbar',
+        'Ext.form.FieldContainer',
+        'Ext.form.field.Date',
         'Ext.form.Label'
     ],
 
@@ -147,7 +149,77 @@ Ext.define('Stalfond.view.MainView', {
                                             xtype: 'container',
                                             dock: 'top',
                                             height: '100%',
-                                            itemId: 'conrtactCheckoutContainer'
+                                            itemId: 'conrtactCheckoutContainer',
+                                            padding: 10,
+                                            items: [
+                                                {
+                                                    xtype: 'container',
+                                                    height: 80,
+                                                    id: 'col-left',
+                                                    margin: '',
+                                                    width: '50%',
+                                                    layout: {
+                                                        type: 'hbox',
+                                                        align: 'stretch',
+                                                        pack: 'end'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldcontainer',
+                                                            flex: 1,
+                                                            height: 120,
+                                                            width: '50%',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    fieldLabel: '№ договора',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    fieldLabel: 'Фимилия',
+                                                                    labelWidth: 150
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    height: 80,
+                                                    id: 'col-right',
+                                                    width: '50%',
+                                                    layout: {
+                                                        type: 'hbox',
+                                                        align: 'stretch',
+                                                        pack: 'end'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldcontainer',
+                                                            flex: 1,
+                                                            height: 120,
+                                                            width: '50%',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'datefield',
+                                                                    minWidth: 400,
+                                                                    fieldLabel: 'Дата договора',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    fieldLabel: 'Фамилия при прожд.',
+                                                                    labelWidth: 150
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 },

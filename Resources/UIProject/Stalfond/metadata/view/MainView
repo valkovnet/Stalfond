@@ -324,10 +324,151 @@
                                             "userConfig": {
                                                 "dock": "top",
                                                 "height": "100%",
-                                                "itemId": "conrtactCheckoutContainer"
+                                                "itemId": "conrtactCheckoutContainer",
+                                                "padding": 10
                                             },
                                             "name": "MyContainer1",
-                                            "designerId": "f042000d-c337-4796-b507-67da084a14af"
+                                            "designerId": "f042000d-c337-4796-b507-67da084a14af",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "container|align": "stretch",
+                                                        "container|pack": "end",
+                                                        "container|padding": null,
+                                                        "height": 80,
+                                                        "id": "col-left",
+                                                        "layout": "hbox",
+                                                        "margin": "",
+                                                        "width": "50%"
+                                                    },
+                                                    "name": "MyContainer3",
+                                                    "designerId": "a1cc1976-623f-42cb-8205-70920ddb6d49",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.FieldContainer",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fieldLabel": null,
+                                                                "height": 120,
+                                                                "layout|flex": 1,
+                                                                "width": "50%"
+                                                            },
+                                                            "name": "MyFieldContainer",
+                                                            "designerId": "99755a0f-554e-4b04-b395-6ee57ebec6db",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.form.field.Text",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fieldLabel": "№ договора",
+                                                                        "labelWidth": 150,
+                                                                        "minWidth": 400
+                                                                    },
+                                                                    "name": "MyTextField",
+                                                                    "designerId": "f0d7aa4a-92c4-415c-becc-0cadb9d73996"
+                                                                },
+                                                                {
+                                                                    "type": "Ext.form.field.Text",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fieldLabel": "Фимилия",
+                                                                        "labelWidth": 150,
+                                                                        "minWidth": 400
+                                                                    },
+                                                                    "name": "MyTextField1",
+                                                                    "designerId": "339efa38-9cf1-4254-a94b-25c3758cad8d"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "container|align": "stretch",
+                                                        "container|pack": "end",
+                                                        "height": 80,
+                                                        "id": "col-right",
+                                                        "layout": "hbox",
+                                                        "width": "50%"
+                                                    },
+                                                    "name": "MyContainer2",
+                                                    "designerId": "c97ee1a8-cb82-43fe-ad2d-f5ef0f8e4742",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.FieldContainer",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fieldLabel": null,
+                                                                "height": 120,
+                                                                "layout|flex": 1,
+                                                                "width": "50%"
+                                                            },
+                                                            "name": "MyFieldContainer1",
+                                                            "designerId": "6e0d1890-6a82-4329-bed6-b2a584189cb5",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.form.field.Date",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fieldLabel": "Дата договора",
+                                                                        "labelWidth": 150,
+                                                                        "minWidth": 400
+                                                                    },
+                                                                    "name": "MyDateField",
+                                                                    "designerId": "f9d6d60f-8898-47f2-8610-ebd50e0a9239"
+                                                                },
+                                                                {
+                                                                    "type": "Ext.form.field.Text",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fieldLabel": "Фамилия при прожд.",
+                                                                        "labelWidth": 150,
+                                                                        "minWidth": 400
+                                                                    },
+                                                                    "name": "MyTextField2",
+                                                                    "designerId": "6e8c5807-1450-4fcd-92e3-6b5a35d5172e"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
