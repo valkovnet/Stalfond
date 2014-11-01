@@ -6,10 +6,10 @@
         },
         "canvasControls": {
             "viewportSize": {
-                "name": "Auto Expand",
-                "builtIn": true,
-                "height": null,
-                "width": null
+                "name": "Screen",
+                "builtIn": false,
+                "height": 1024,
+                "width": 1800
             }
         },
         "urlPrefix": "",

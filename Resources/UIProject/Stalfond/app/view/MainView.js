@@ -23,12 +23,16 @@ Ext.define('Stalfond.view.MainView', {
         'Ext.menu.Item',
         'Ext.tab.Panel',
         'Ext.tab.Tab',
-        'Ext.toolbar.Toolbar',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Date',
         'Ext.form.CheckboxGroup',
         'Ext.form.field.Checkbox',
-        'Ext.form.Label'
+        'Ext.grid.Panel',
+        'Ext.grid.column.Number',
+        'Ext.grid.column.Date',
+        'Ext.grid.column.Boolean',
+        'Ext.grid.View',
+        'Ext.toolbar.Paging'
     ],
 
     viewModel: {
@@ -581,8 +585,194 @@ Ext.define('Stalfond.view.MainView', {
                     },
                     items: [
                         {
-                            xtype: 'label',
-                            text: 'About Us View'
+                            xtype: 'container',
+                            flex: 1,
+                            id: 'nameContiner',
+                            width: '100%',
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    id: 'filtersContainer',
+                                    items: [
+                                        {
+                                            xtype: 'fieldcontainer',
+                                            height: 120,
+                                            id: 'col-left-filter',
+                                            minWidth: 300,
+                                            width: '25%',
+                                            items: [
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Дата создания от',
+                                                    labelWidth: 120
+                                                },
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Дата создания до',
+                                                    labelWidth: 120
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Продукт',
+                                                    labelWidth: 120
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Телефон',
+                                                    labelWidth: 120
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'fieldcontainer',
+                                            height: 120,
+                                            id: 'col-left-filter-first',
+                                            minWidth: 250,
+                                            width: '20%',
+                                            items: [
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 200,
+                                                    fieldLabel: 'От',
+                                                    labelWidth: 80
+                                                },
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 200,
+                                                    fieldLabel: 'До',
+                                                    labelWidth: 80
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    margin: 10,
+                                                    width: 200,
+                                                    fieldLabel: 'Снилс',
+                                                    labelWidth: 80
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    margin: 10,
+                                                    width: 200,
+                                                    fieldLabel: 'ID заявки',
+                                                    labelWidth: 80
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'fieldcontainer',
+                                            height: 120,
+                                            id: 'col-left-filter-second',
+                                            minWidth: 200,
+                                            width: '20%',
+                                            items: [
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Дата начала от'
+                                                },
+                                                {
+                                                    xtype: 'combobox',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Статус'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Подразделение'
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'fieldcontainer',
+                                            height: 120,
+                                            id: 'col-left-filter-last',
+                                            minWidth: 200,
+                                            width: '20%',
+                                            items: [
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'От'
+                                                },
+                                                {
+                                                    xtype: 'combobox',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Подразделение'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'ID'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    margin: 10,
+                                                    width: 200,
+                                                    scale: 'medium',
+                                                    text: 'Искать'
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    id: 'resultContainer',
+                                    items: [
+                                        {
+                                            xtype: 'gridpanel',
+                                            height: 450,
+                                            title: 'Таблица договоров',
+                                            columns: [
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'string',
+                                                    text: 'String'
+                                                },
+                                                {
+                                                    xtype: 'numbercolumn',
+                                                    dataIndex: 'number',
+                                                    text: 'Number'
+                                                },
+                                                {
+                                                    xtype: 'datecolumn',
+                                                    dataIndex: 'date',
+                                                    text: 'Date'
+                                                },
+                                                {
+                                                    xtype: 'booleancolumn',
+                                                    dataIndex: 'bool',
+                                                    text: 'Boolean'
+                                                }
+                                            ],
+                                            dockedItems: [
+                                                {
+                                                    xtype: 'pagingtoolbar',
+                                                    dock: 'bottom',
+                                                    width: 360,
+                                                    displayInfo: true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -594,13 +784,7 @@ Ext.define('Stalfond.view.MainView', {
                         type: 'vbox',
                         align: 'center',
                         pack: 'center'
-                    },
-                    items: [
-                        {
-                            xtype: 'label',
-                            text: 'Contact Us View'
-                        }
-                    ]
+                    }
                 }
             ]
         }
