@@ -270,15 +270,213 @@ Ext.define('Stalfond.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'container',
-                                                    height: 24,
-                                                    id: 'col-left-first',
-                                                    width: '50%'
+                                                    id: 'col-center',
+                                                    margin: '0 20 0 0',
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            margin: '0 10 0 10',
+                                                            minWidth: 400,
+                                                            padding: '',
+                                                            width: '100%',
+                                                            fieldLabel: 'Место рождения',
+                                                            labelWidth: 150
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     xtype: 'container',
-                                                    height: 24,
+                                                    height: 40,
+                                                    id: 'col-left-first',
+                                                    margin: '',
+                                                    width: '50%',
+                                                    layout: {
+                                                        type: 'hbox',
+                                                        align: 'stretch',
+                                                        pack: 'end'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldcontainer',
+                                                            flex: 1,
+                                                            height: 120,
+                                                            margin: 10,
+                                                            width: '50%',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Паспорт серия:',
+                                                                    labelWidth: 150
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    height: 40,
                                                     id: 'col-right-first',
-                                                    width: '50%'
+                                                    width: '50%',
+                                                    layout: {
+                                                        type: 'hbox',
+                                                        align: 'stretch',
+                                                        pack: 'end'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldcontainer',
+                                                            flex: 1,
+                                                            height: 120,
+                                                            margin: 10,
+                                                            width: '50%',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Паспорт номер',
+                                                                    labelWidth: 150
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    id: 'col-center-first',
+                                                    margin: '0 20 0 0',
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            margin: '0 10 0 10',
+                                                            minWidth: 400,
+                                                            padding: '',
+                                                            width: '100%',
+                                                            fieldLabel: 'Кем выдан',
+                                                            labelWidth: 150
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    height: 40,
+                                                    id: 'col-left-second',
+                                                    margin: '',
+                                                    width: '50%',
+                                                    layout: {
+                                                        type: 'hbox',
+                                                        align: 'stretch',
+                                                        pack: 'end'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldcontainer',
+                                                            flex: 1,
+                                                            height: 120,
+                                                            margin: 10,
+                                                            width: '50%',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'datefield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Дата выдачи',
+                                                                    labelWidth: 150
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    id: 'col-center-second',
+                                                    margin: '0 20 0 0',
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            margin: '0 10 0 10',
+                                                            minWidth: 400,
+                                                            padding: '',
+                                                            width: '100%',
+                                                            fieldLabel: 'Адрес',
+                                                            labelWidth: 150
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    height: 70,
+                                                    id: 'col-left-last',
+                                                    margin: '',
+                                                    width: '50%',
+                                                    layout: {
+                                                        type: 'hbox',
+                                                        align: 'stretch',
+                                                        pack: 'end'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldcontainer',
+                                                            flex: 1,
+                                                            height: 120,
+                                                            margin: 10,
+                                                            width: '50%',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Мобильный телефон',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Время д/св.',
+                                                                    labelWidth: 150
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    height: 70,
+                                                    id: 'col-right-last',
+                                                    width: '50%',
+                                                    layout: {
+                                                        type: 'hbox',
+                                                        align: 'stretch',
+                                                        pack: 'end'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldcontainer',
+                                                            flex: 1,
+                                                            height: 120,
+                                                            margin: 10,
+                                                            width: '50%',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Фамилия при рожд.',
+                                                                    labelWidth: 150
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    minWidth: 400,
+                                                                    width: '100%',
+                                                                    fieldLabel: 'Имя при рожд.',
+                                                                    labelWidth: 150
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
