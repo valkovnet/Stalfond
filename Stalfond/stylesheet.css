@@ -1,0 +1,16 @@
+html, body {
+    min-width:1000px;
+}
+
+#btn-annuler {
+    position: absolute !important; width:200px !important; float:right !important; right: 0px !important; left: auto  !important;
+    margin-right:20px !important;
+}
+
+[id*='col-left'] {
+    float:left !important;
+}
+
+[id*='col-right'] {
+    float:right !important;
+}

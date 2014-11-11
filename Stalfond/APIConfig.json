@@ -1,0 +1,9 @@
+{
+	"assemblies": [
+	 	"VLib.API.dll", 
+		"Uralsib.Stalfond.Direct.dll"
+	],
+	"actions": [
+        "StalfondDirect"
+	]
+}
