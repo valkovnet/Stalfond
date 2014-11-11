@@ -337,6 +337,46 @@
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
+                                                    "name": "MyContainer25",
+                                                    "designerId": "7a9be988-4ed4-4e65-a36f-1e5a431fa2f5",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "margin": 10,
+                                                                "text": "Статус:"
+                                                            },
+                                                            "name": "MyLabel",
+                                                            "designerId": "3a9d2999-276a-48a8-ad4f-bd90e61ca680"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "margin": 100,
+                                                                "text": "Новый"
+                                                            },
+                                                            "name": "MyLabel1",
+                                                            "designerId": "9475abe0-af5b-47b0-8163-1c2df42d0414"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
                                                     "name": "MyContainer11",
                                                     "designerId": "b4e84f93-64e7-4c90-a934-434e0a01c904",
                                                     "cn": [

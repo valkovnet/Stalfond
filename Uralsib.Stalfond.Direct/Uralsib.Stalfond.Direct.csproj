@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6954A88A-0916-4508-B067-0C43DB9B9F0F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Uralsib.Stalfond.Direct</RootNamespace>
+    <AssemblyName>Uralsib.Stalfond.Direct</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClientCards">
+      <HintPath>..\..\SharedBinaries\AllBin\ClientCards.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Direct">
+      <HintPath>..\..\SharedBinaries\AllBin\Ext.Direct.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\SharedBinaries\AllBin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Virtu.Classified">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Classified.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Data">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Data.ClassifierData">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Data.ClassifierData.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Data.DataFactory">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Data.DataFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Data.Profile">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Data.Profile.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.FFW">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.FFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Json.Policy">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Json.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Reflection">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Service">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Services.Classifier">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Services.Classifier.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Web.Insurance">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Web.Insurance.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Web.Security">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Web.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Virtu.Xml.Policy">
+      <HintPath>..\..\SharedBinaries\AllBin\Virtu.Xml.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="VLib.API">
+      <HintPath>..\..\SharedBinaries\AllBin\VLib.API.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Result.cs" />
+    <Compile Include="Direct\StalfondDirect.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

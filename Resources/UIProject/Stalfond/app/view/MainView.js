@@ -138,10 +138,23 @@ Ext.define('Stalfond.view.MainView', {
                                                         ]
                                                     }
                                                 },
-                                                {
-                                                    xtype: 'button',
-                                                    scale: 'medium',
-                                                    text: 'Сохранить'
+                                            {
+                                                xtype: 'button',
+                                                scale: 'medium',
+                                                text: 'Сохранить',
+                                                listeners: {
+                                                    click: function() {
+                                                        
+                                                        var doc = buildDocument();
+                                                        if (doc.isOk == true) {
+                                                            VLib.API.StalfondDirect.CreateDocument({ document: doc }, function(resp) {
+                                                                //alert('Номер документа - ' + resp.documentId);
+                                                                Ext.getCmp('txtDocNumber').setValue(resp.documentId);
+                                                                Ext.getCmp('txtStatus').setValue(resp.Status);
+                                                            });
+                                                        }
+                                                    }
+                                                    }   
                                                 },
                                                 {
                                                     xtype: 'button',
@@ -157,8 +170,23 @@ Ext.define('Stalfond.view.MainView', {
                                             dock: 'top',
                                             height: '100%',
                                             itemId: 'conrtactCheckoutContainer',
+                                            id: 'mainContainer',
                                             padding: 10,
                                             items: [
+                                                {
+                                                    xtype: 'container',
+                                                    margin: 10,
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            minWidth: 400,
+                                                            width: '100%',
+                                                            fieldLabel: 'Статус документа',
+                                                            labelWidth: 150,
+                                                            id: 'txtStatus'
+                                                        }
+                                                    ]
+                                                },
                                                 {
                                                     xtype: 'container',
                                                     items: [
@@ -186,21 +214,28 @@ Ext.define('Stalfond.view.MainView', {
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: '№ договора',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtDocNumber'
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
+																			id:'txtSurname',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Фимилия',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            allowBlank: false,
+                                                                            blankText: "Введите фамилию"
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Имя',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtName',
+                                                                            allowBlank: false,
+                                                                            blankText: "Введите имя"
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -999,5 +1034,29 @@ Ext.define('Stalfond.view.MainView', {
     onMenuClick: function(menu, item, e, eOpts) {
         location.hash = item.itemId;
     }
-
+    
 });
+
+function getControlValue(ctrlId, doc) {
+    var ctrl = Ext.getCmp(ctrlId);
+    if (ctrl.isValid()) {
+        return ctrl.getValue();
+    } else {
+        doc.isOk = false;
+        return null;
+    }
+}
+
+function buildDocument() {
+    var doc = {};
+    
+    try {
+        doc.isOk = true;
+        doc.Surname = getControlValue('txtSurname', doc);
+        doc.Name = getControlValue('txtName', doc);
+
+        return doc;
+    } catch(err) {
+        return null;
+    }
+};
