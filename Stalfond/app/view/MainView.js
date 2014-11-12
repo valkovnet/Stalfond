@@ -1,6 +1,13 @@
 /*
  * File: app/view/MainView.js
  */
+var genderStore = Ext.create('Ext.data.Store', {
+    fields: ['id', 'name'],
+    data: [
+        { "id": "М", "name": "Мужской" },
+        { "id": "Ж", "name": "Женский" }
+    ]
+});
 
 Ext.define('Stalfond.view.MainView', {
     extend: 'Ext.container.Viewport',
@@ -235,14 +242,21 @@ Ext.define('Stalfond.view.MainView', {
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Отчество',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtMiddleName'
                                                                         },
                                                                         {
                                                                             xtype: 'combobox',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Пол',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'ctrlGender',
+                                                                            displayField: 'name',
+                                                                            valueField: 'id',
+                                                                            editable: false,
+                                                                            mode: 'local',
+                                                                            store: genderStore
                                                                         }
                                                                     ]
                                                                 }
@@ -272,28 +286,32 @@ Ext.define('Stalfond.view.MainView', {
                                                                             width: '100%',
                                                                             fieldLabel: 'Дата договора',
                                                                             labelWidth: 150,
-                                                                            format: 'm.d.Y'
+                                                                            format: 'm.d.Y',
+                                                                            id: 'dtDocumentDate'
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Фамилия при рожд.',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtSurnameBirth'
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Имя при рожд.',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtNameBirth'
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Отчество при рожд.',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtMiddleNameBirth'
                                                                         },
                                                                         {
                                                                             xtype: 'datefield',
@@ -301,7 +319,8 @@ Ext.define('Stalfond.view.MainView', {
                                                                             width: '100%',
                                                                             fieldLabel: 'Дата рождения',
                                                                             labelWidth: 150,
-                                                                            format: 'm.d.Y'
+                                                                            format: 'm.d.Y',
+                                                                            id: 'dtBirthDate'
                                                                         }
                                                                     ]
                                                                 }
@@ -322,7 +341,8 @@ Ext.define('Stalfond.view.MainView', {
                                                             padding: '',
                                                             width: '100%',
                                                             fieldLabel: 'Место рождения',
-                                                            labelWidth: 150
+                                                            labelWidth: 150,
+                                                            id: 'txtBirthPlace'
                                                         }
                                                     ]
                                                 },
@@ -354,7 +374,8 @@ Ext.define('Stalfond.view.MainView', {
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Паспорт серия:',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtPassport'
                                                                         }
                                                                     ]
                                                                 }
@@ -385,7 +406,8 @@ Ext.define('Stalfond.view.MainView', {
                                                                             padding: '',
                                                                             width: '100%',
                                                                             fieldLabel: 'Паспорт номер',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtPassportNum'
                                                                         }
                                                                     ]
                                                                 }
@@ -406,7 +428,8 @@ Ext.define('Stalfond.view.MainView', {
                                                             padding: '',
                                                             width: '100%',
                                                             fieldLabel: 'Кем выдан',
-                                                            labelWidth: 150
+                                                            labelWidth: 150,
+                                                            id: 'txtPassportGivenBy'
                                                         }
                                                     ]
                                                 },
@@ -442,7 +465,8 @@ Ext.define('Stalfond.view.MainView', {
                                                                             width: '100%',
                                                                             fieldLabel: 'Дата выдачи',
                                                                             labelWidth: 150,
-                                                                            format: 'm.d.Y'
+                                                                            format: 'm.d.Y',
+                                                                            id: 'dtPassportGivenDate'
                                                                         }
                                                                     ]
                                                                 }
@@ -463,7 +487,8 @@ Ext.define('Stalfond.view.MainView', {
                                                             padding: '',
                                                             width: '100%',
                                                             fieldLabel: 'Адрес',
-                                                            labelWidth: 150
+                                                            labelWidth: 150,
+                                                            id: 'txtAddress'
                                                         }
                                                     ]
                                                 },
@@ -495,14 +520,16 @@ Ext.define('Stalfond.view.MainView', {
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Мобильный телефон',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtMobileNumber'
                                                                         },
                                                                         {
-                                                                            xtype: 'combobox',
+                                                                            xtype: 'textfield',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Время д/св.',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtContactTime'
                                                                         }
                                                                     ]
                                                                 }
@@ -532,14 +559,16 @@ Ext.define('Stalfond.view.MainView', {
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Доп. телефон',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtAdditionalTel'
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'E-Mail',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            id: 'txtEmail'
                                                                         }
                                                                     ]
                                                                 }
@@ -578,12 +607,14 @@ Ext.define('Stalfond.view.MainView', {
                                                                                 {
                                                                                     xtype: 'checkboxfield',
                                                                                     width: 100,
-                                                                                    boxLabel: 'E-Mail'
+                                                                                    boxLabel: 'E-Mail',
+                                                                                    id: 'chkEmail'
                                                                                 },
                                                                                 {
                                                                                     xtype: 'checkboxfield',
                                                                                     width: 180,
-                                                                                    boxLabel: 'Почтовое отправление'
+                                                                                    boxLabel: 'Почтовое отправление',
+                                                                                    id: 'chkPostSend'
                                                                                 }
                                                                             ]
                                                                         }
@@ -1056,6 +1087,7 @@ Ext.define('Stalfond.view.MainView', {
 		VLib.API.StalfondDirect.NewDocument(null, function (resp) {
 		    console.log(resp);
 		    setDisable(false);
+		    clearForm();
 		    Ext.getCmp('txtDocNumber').setValue(resp.docNumber);
 		    Ext.getCmp('txtStatus').setValue(resp.statusText);
 		});
@@ -1096,4 +1128,30 @@ function setDisable(disable) {
     Ext.getCmp('btnSave').setDisabled(disable);
 };
 
-
+function clearForm()
+{
+    Ext.getCmp('txtDocNumber').setValue('');
+    Ext.getCmp('txtStatus').setValue('');
+    Ext.getCmp('txtDocNumber').setValue('');
+    Ext.getCmp('txtSurname').setValue('');
+    Ext.getCmp('txtName').setValue('');
+    Ext.getCmp('txtMiddleName').setValue('');
+    Ext.getCmp('ctrlGender').select('М');
+    Ext.getCmp('dtDocumentDate').setValue('');
+    Ext.getCmp('txtSurnameBirth').setValue('');
+    Ext.getCmp('txtNameBirth').setValue('');
+    Ext.getCmp('txtMiddleNameBirth').setValue('');
+    Ext.getCmp('dtBirthDate').setValue('');
+    Ext.getCmp('txtBirthPlace').setValue('');
+    Ext.getCmp('txtPassport').setValue('');
+    Ext.getCmp('txtPassportNum').setValue('');
+    Ext.getCmp('txtPassportGivenBy').setValue('');
+    Ext.getCmp('dtPassportGivenDate').setValue('');
+    Ext.getCmp('txtAddress').setValue('');
+    Ext.getCmp('txtMobileNumber').setValue('');
+    Ext.getCmp('txtContactTime').setValue('');
+    Ext.getCmp('txtAdditionalTel').setValue('');
+    Ext.getCmp('txtEmail').setValue('');
+    Ext.getCmp('chkEmail').setValue('');
+    Ext.getCmp('chkPostSend').setValue('');
+}
