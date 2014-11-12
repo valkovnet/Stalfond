@@ -2,6 +2,8 @@
 using Newtonsoft.Json.Linq;
 using System;
 using Uralsib.Stalfond.Direct.Classes;
+using Virtu.FFW;
+using Virtu.Json.Policy;
 
 namespace Uralsib.Stalfond.Direct.Direct
 {
@@ -27,14 +29,16 @@ namespace Uralsib.Stalfond.Direct.Direct
         #endregion
 
         [DirectMethod, ParseAsJson]
-        public JObject CreateDocument(JObject document)
+        public JObject NewDocument(JObject document)
         {
             var res = new Result();
             try
             {
                 res.success = true;
-                res.documentId = new Random().Next(10000, 20000);
-                res.status = "Заведенный";
+                res.message = "New doc created";
+                res.docNumber = new Random().Next(10000, 20000);
+                res.status = "dsNew";
+
             }
             catch (Exception ex)
             {
@@ -43,6 +47,34 @@ namespace Uralsib.Stalfond.Direct.Direct
             }
 
             return res.ToJObject();
+        }
+
+        [DirectMethod, ParseAsJson]
+        public JObject SaveDocument(JObject document)
+        {
+            try
+            {
+                JsonHelper.SetJValue(document, "success", true);
+                JsonHelper.SetJValue(document, "message", "Doc has been saved");
+                JsonHelper.SetJValue(document, "status", "dsSaved");
+                JsonHelper.SetJValue(document, "statusText", Result.GetStatusTest("dsSaved"));
+
+                //save here
+                //PolicyStorage PS = new PolicyStorage(new FeatureBase());
+                //var res = (JObject)PS.Update(document);
+                // here we have some EXCEPTION!!
+
+                //return res;
+
+                return document;
+            }
+            catch (Exception ex)
+            {
+                JsonHelper.SetJValue(document, "success", false);
+                JsonHelper.SetJValue(document, "message", ex.Message);
+                return document;
+            }
+            
         }
 
     }
