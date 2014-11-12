@@ -242,7 +242,17 @@ Ext.define('Stalfond.view.MainView', {
                                                                             labelWidth: 150,
                                                                             allowBlank: false,
                                                                             blankText: "Введите фамилию",
-                                                                            submitEmptyText: false
+                                                                            submitEmptyText: false,
+                                                                            listeners: {
+                                                                                change: function (txt, newValue, oldValue)
+                                                                                {
+                                                                                    var val1 = Ext.getCmp('txtSurnameBirth').getValue();
+                                                                                    if (val1 == oldValue)
+                                                                                    {
+                                                                                        Ext.getCmp('txtSurnameBirth').setValue(newValue);
+                                                                                    }
+                                                                                }
+                                                                            },
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -253,7 +263,15 @@ Ext.define('Stalfond.view.MainView', {
                                                                             id: 'txtName',
                                                                             allowBlank: false,
                                                                             blankText: "Введите имя",
-                                                                            submitEmptyText: false
+                                                                            submitEmptyText: false,
+                                                                            listeners: {
+                                                                                change: function (txt, newValue, oldValue) {
+                                                                                    var val1 = Ext.getCmp('txtNameBirth').getValue();
+                                                                                    if (val1 == oldValue) {
+                                                                                        Ext.getCmp('txtNameBirth').setValue(newValue);
+                                                                                    }
+                                                                                }
+                                                                            },
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -263,7 +281,15 @@ Ext.define('Stalfond.view.MainView', {
                                                                             labelWidth: 150,
                                                                             id: 'txtMiddleName',
                                                                             blankText: "Введите отчество",
-                                                                            submitEmptyText: false
+                                                                            submitEmptyText: false,
+                                                                            listeners: {
+                                                                                change: function (txt, newValue, oldValue) {
+                                                                                    var val1 = Ext.getCmp('txtMiddleNameBirth').getValue();
+                                                                                    if (val1 == oldValue) {
+                                                                                        Ext.getCmp('txtMiddleNameBirth').setValue(newValue);
+                                                                                    }
+                                                                                }
+                                                                            },
                                                                         },
                                                                         {
                                                                             xtype: 'combobox',
