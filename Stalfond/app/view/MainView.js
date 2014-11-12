@@ -9,6 +9,15 @@ var genderStore = Ext.create('Ext.data.Store', {
     ]
 });
 
+var validMobile = '^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$';
+Ext.apply(Ext.form.field.VTypes, {
+    //  vtype validation function
+    vMobile: function (val, field) {
+        return validMobile.test(val);
+    },
+    vMobileText: 'Не верный номер. Введите номер в формате +7XXXXXXXXXX.'
+});
+
 Ext.define('Stalfond.view.MainView', {
     extend: 'Ext.container.Viewport',
     alias: 'widget.mainview',
@@ -589,7 +598,10 @@ Ext.define('Stalfond.view.MainView', {
                                                                             labelWidth: 150,
                                                                             id: 'txtMobileNumber',
                                                                             allowBlank: false,
-                                                                            blankText: "Введите мобильный телефон"
+                                                                            //vtype: 'vMobile',
+                                                                            blankText: "Введите мобильный телефон",
+                                                                            regex: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/,
+                                                                            regexText: 'Неверный номер. Введите номер в формате +7XXXXXXXXXX.'
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -630,7 +642,9 @@ Ext.define('Stalfond.view.MainView', {
                                                                             width: '100%',
                                                                             fieldLabel: 'Доп. телефон',
                                                                             labelWidth: 150,
-                                                                            id: 'txtAdditionalTel'
+                                                                            id: 'txtAdditionalTel',
+                                                                            regex: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/,
+                                                                            regexText: 'Неверный номер. Введите номер в формате +7XXXXXXXXXX.'
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
