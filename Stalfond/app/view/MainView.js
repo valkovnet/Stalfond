@@ -1210,9 +1210,9 @@ function buildDocument(validate) {
 
 function setDisable(disable) {
     Ext.getCmp('mainContainer').setDisabled(disable);
-    Ext.getCmp('btnNull').setDisabled(disable);
+    //Ext.getCmp('btnNull').setDisabled(disable);
     Ext.getCmp('btnStatus').setDisabled(disable);
-    Ext.getCmp('btnPrint').setDisabled(disable);
+    //Ext.getCmp('btnPrint').setDisabled(disable);
     Ext.getCmp('btnSave').setDisabled(disable);
 };
 

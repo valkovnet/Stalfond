@@ -62,8 +62,11 @@ namespace Uralsib.Stalfond.Direct.Direct
             {
                 JsonHelper.SetJValue(document, "success", true);
                 JsonHelper.SetJValue(document, "message", "Doc has been saved");
-                JsonHelper.SetJValue(document, "status", "Заведенный");
-                JsonHelper.SetJValue(document, "statusText", "Заведенный");
+                if ((string)document["status"] == "Черновик" || (string)document["status"] == "Новый")
+                {
+                    JsonHelper.SetJValue(document, "status", "Заведенный");
+                    JsonHelper.SetJValue(document, "statusText", "Заведенный");
+                }
                 JsonHelper.SetJValue(document, "ProductID", "8B9D437D-2B55-488F-88B8-97683273E58A");
                 JsonHelper.SetJValue(document, "ID", new Random().Next(10000, 20000));
 
