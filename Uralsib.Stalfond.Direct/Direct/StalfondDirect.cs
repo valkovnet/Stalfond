@@ -34,11 +34,17 @@ namespace Uralsib.Stalfond.Direct.Direct
             var res = new Result();
             try
             {
+                //JsonHelper.SetJValue(document, "ProductID", "8B9D437D-2B55-488F-88B8-97683273E58A");
+                //JsonHelper.SetJValue(document, "ID", new Random().Next(10000, 20000));
+
+                //save here
+                //PolicyStorage PS = new PolicyStorage(new FeatureBase());
+                //var result = (JObject)PS.Update(document);
+
                 res.success = true;
                 res.message = "New doc created";
                 res.docNumber = new Random().Next(10000, 20000);
                 res.status = "dsNew";
-
             }
             catch (Exception ex)
             {
@@ -58,6 +64,8 @@ namespace Uralsib.Stalfond.Direct.Direct
                 JsonHelper.SetJValue(document, "message", "Doc has been saved");
                 JsonHelper.SetJValue(document, "status", "dsSaved");
                 JsonHelper.SetJValue(document, "statusText", Result.GetStatusTest("dsSaved"));
+                JsonHelper.SetJValue(document, "ProductID", "8B9D437D-2B55-488F-88B8-97683273E58A");
+                JsonHelper.SetJValue(document, "ID", new Random().Next(10000, 20000));
 
                 //save here
                 //PolicyStorage PS = new PolicyStorage(new FeatureBase());

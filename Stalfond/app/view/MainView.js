@@ -95,6 +95,7 @@ Ext.define('Stalfond.view.MainView', {
                                     xtype: 'panel',
                                     itemId: 'checkoutTabPage',
                                     title: 'Оформление',
+                                    id: 'mainPanel',
                                     dockedItems: [
                                         {
                                             xtype: 'toolbar',
@@ -106,6 +107,7 @@ Ext.define('Stalfond.view.MainView', {
                                                     xtype: 'button',
                                                     scale: 'medium',
                                                     text: 'Новый',
+                                                    id: 'btnNew',
 													listeners: {
 														click: 'onNewDocument'
                                                     }   
@@ -113,12 +115,16 @@ Ext.define('Stalfond.view.MainView', {
                                                 {
                                                     xtype: 'button',
                                                     scale: 'medium',
-                                                    text: 'Перевести в статус "На обзвоне"'
+                                                    text: 'Перевести в статус "На обзвоне"',
+                                                    disabled: true,
+                                                    id: 'btnStatus'
                                                 },
                                                 {
                                                     xtype: 'button',
                                                     scale: 'medium',
                                                     text: 'Печать',
+                                                    id: 'btnPrint',
+                                                    disabled: true,
                                                     menu: {
                                                         xtype: 'menu',
                                                         itemId: 'printMenu',
@@ -134,16 +140,20 @@ Ext.define('Stalfond.view.MainView', {
                                                 xtype: 'button',
                                                 scale: 'medium',
                                                 text: 'Сохранить',
+                                                id: 'btnSave',
                                                 listeners: {
                                                     click: 'onSaveDocument'
-                                                    }   
+                                                },
+                                                disabled: true
                                                 },
                                                 {
                                                     xtype: 'button',
                                                     id: 'btn-annuler',
                                                     itemId: 'annuler',
                                                     scale: 'medium',
-                                                    text: 'Аннулировать'
+                                                    text: 'Аннулировать',
+                                                    id: 'btnNull',
+                                                    disabled: true
                                                 }
                                             ]
                                         },
@@ -153,6 +163,7 @@ Ext.define('Stalfond.view.MainView', {
                                             height: '100%',
                                             itemId: 'conrtactCheckoutContainer',
                                             id: 'mainContainer',
+                                            disabled: true,
                                             padding: 10,
                                             items: [
                                                 {
@@ -160,7 +171,7 @@ Ext.define('Stalfond.view.MainView', {
                                                     margin: 10,
                                                     items: [
                                                         {
-                                                            xtype: 'textfield',
+                                                            xtype: 'displayfield',
                                                             minWidth: 400,
                                                             width: '100%',
                                                             fieldLabel: 'Статус документа',
@@ -1044,6 +1055,7 @@ Ext.define('Stalfond.view.MainView', {
 		console.log('onNewDocument fired');
 		VLib.API.StalfondDirect.NewDocument(null, function (resp) {
 		    console.log(resp);
+		    setDisable(false);
 		    Ext.getCmp('txtDocNumber').setValue(resp.docNumber);
 		    Ext.getCmp('txtStatus').setValue(resp.statusText);
 		});
@@ -1075,3 +1087,13 @@ function buildDocument() {
         return null;
     }
 };
+
+function setDisable(disable) {
+    Ext.getCmp('mainContainer').setDisabled(disable);
+    Ext.getCmp('btnNull').setDisabled(disable);
+    Ext.getCmp('btnStatus').setDisabled(disable);
+    Ext.getCmp('btnPrint').setDisabled(disable);
+    Ext.getCmp('btnSave').setDisabled(disable);
+};
+
+

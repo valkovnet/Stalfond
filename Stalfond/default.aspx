@@ -15,6 +15,8 @@
     <script src="http://cdn.sencha.com/ext/gpl/5.0.1/build/packages/ext-theme-crisp/build/ext-theme-crisp.js"></script>
     <link rel="stylesheet" href="http://cdn.sencha.com/ext/gpl/5.0.1/build/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css">
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
  
     <script type="text/javascript" src="api.vlib"></script>
     
