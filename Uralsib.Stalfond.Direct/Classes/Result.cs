@@ -24,27 +24,19 @@ namespace Uralsib.Stalfond.Direct.Classes
             res.Add("success", new JValue(this.success));
             res.Add("message", new JValue(this.message));
             res.Add("status", new JValue(this.status));
-            res.Add("statusText", new JValue(GetStatusTest(this.status)));
+            res.Add("statusText", new JValue(this.status));
             res.Add("docNumber", new JValue(this.docNumber));
 
 
             return res;
         }
 
-        public static string GetStatusTest(string status)
+        public static Dictionary<string, string> NextStatus = new Dictionary<string,string>()
         {
-            if (status.Equals("dsNew"))
-            {
-                return "Новый";
-            } else if (status.Equals("dsSaved"))
-            {
-                return "Сохранен";
-            }
-
-            else
-            {
-                return "Unknown";
-            }
-        }
+            {"Новый", "Черновик"},
+            {"Заведенный", "Напечатанный"},
+            {"Черновик", "Напечатанный"},
+            {"Напечатанный", "На обзвоне"}
+        };
     }
 }

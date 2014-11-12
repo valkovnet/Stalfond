@@ -44,7 +44,7 @@ namespace Uralsib.Stalfond.Direct.Direct
                 res.success = true;
                 res.message = "New doc created";
                 res.docNumber = new Random().Next(10000, 20000);
-                res.status = "dsNew";
+                res.status = "Новый";
             }
             catch (Exception ex)
             {
@@ -62,8 +62,8 @@ namespace Uralsib.Stalfond.Direct.Direct
             {
                 JsonHelper.SetJValue(document, "success", true);
                 JsonHelper.SetJValue(document, "message", "Doc has been saved");
-                JsonHelper.SetJValue(document, "status", "dsSaved");
-                JsonHelper.SetJValue(document, "statusText", Result.GetStatusTest("dsSaved"));
+                JsonHelper.SetJValue(document, "status", "Заведенный");
+                JsonHelper.SetJValue(document, "statusText", "Заведенный");
                 JsonHelper.SetJValue(document, "ProductID", "8B9D437D-2B55-488F-88B8-97683273E58A");
                 JsonHelper.SetJValue(document, "ID", new Random().Next(10000, 20000));
 
@@ -83,6 +83,27 @@ namespace Uralsib.Stalfond.Direct.Direct
                 return document;
             }
             
+        }
+
+        [DirectMethod, ParseAsJson]
+        public JObject ChangeStatus(JObject document)
+        {
+            var res = new Result();
+            try
+            {
+                res.success = true;
+                res.message = "Status changed";
+                res.status = Result.NextStatus[(string)document["status"]];
+
+                return res.ToJObject();
+            }
+            catch (Exception ex)
+            {
+                JsonHelper.SetJValue(document, "success", false);
+                JsonHelper.SetJValue(document, "message", ex.Message);
+                return document;
+            }
+
         }
 
     }

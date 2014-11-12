@@ -122,9 +122,12 @@ Ext.define('Stalfond.view.MainView', {
                                                 {
                                                     xtype: 'button',
                                                     scale: 'medium',
-                                                    text: 'Перевести в статус "На обзвоне"',
+                                                    text: 'Перевести в статус "Черновик"',
                                                     disabled: true,
-                                                    id: 'btnStatus'
+                                                    id: 'btnStatus',
+                                                    listeners: {
+                                                        click: 'onStatusChange'
+                                                    }
                                                 },
                                                 {
                                                     xtype: 'button',
@@ -1113,14 +1116,35 @@ Ext.define('Stalfond.view.MainView', {
 	
 	onSaveDocument: function(){
 		console.log('onSaveDocument fired');
-		var doc = buildDocument();
+		var doc = buildDocument(true);
 		
 		if (doc.isOk == true) {
 		    VLib.API.StalfondDirect.SaveDocument(doc, function(resp) {
 		        Ext.getCmp('txtDocNumber').setValue(resp.docNumber);
 		        Ext.getCmp('txtStatus').setValue(resp.statusText);
+		        Ext.getCmp('btnStatus').setText('Перевести в статус "На обзвоне"');
 		    });
 		}		
+	},
+
+	onStatusChange: function () {
+	    console.log('onStatusChange fired');
+	    var doc = buildDocument(false);
+	    if (doc.isOk == true) {
+	        VLib.API.StalfondDirect.ChangeStatus(doc, function (resp) {
+	            Ext.getCmp('txtStatus').setValue(resp.statusText);
+	            if (resp.status == "Черновик") {
+	                Ext.getCmp('btnStatus').setText('Перевести в статус "Напечатанные"');
+	            } else if (resp.status == "Заведенный") {
+	                Ext.getCmp('btnStatus').setText('Перевести в статус "Напечатанные"');
+	            } else if (resp.status == "Напечатанный") {
+	                Ext.getCmp('btnStatus').setText('Перевести в статус "На обзвоне"');
+	            } else if (resp.status == "На обзвоне") {
+	                Ext.getCmp('btnStatus').setText('Перевести в статус "На обзвоне"');
+	                Ext.getCmp('btnStatus').setDisabled(true);
+	            }
+	        });
+	    }
 	},
 	
 	onNewDocument: function(){
@@ -1131,6 +1155,7 @@ Ext.define('Stalfond.view.MainView', {
 		    clearForm();
 		    Ext.getCmp('txtDocNumber').setValue(resp.docNumber);
 		    Ext.getCmp('txtStatus').setValue(resp.statusText);
+		    Ext.getCmp('btnStatus').setText('Перевести в статус "Черновики"');
 		});
 	},
     
@@ -1138,7 +1163,7 @@ Ext.define('Stalfond.view.MainView', {
 
 function getControlValue(ctrlId, doc) {
     var ctrl = Ext.getCmp(ctrlId);
-    if (ctrl.isValid()) {
+    if (!doc.validate || ctrl.isValid()) {
         return ctrl.getValue();
     } else {
         doc.isOk = false;
@@ -1146,34 +1171,36 @@ function getControlValue(ctrlId, doc) {
     }
 }
 
-function buildDocument() {
+function buildDocument(validate) {
     var doc = {};
     
     try {
         doc.isOk = true;
+        doc.validate = validate;
         doc.docNumber = getControlValue('txtDocNumber', doc);
         doc.dogovorNumber = getControlValue('txtDogovorNumber', doc);
-        doc.Surname = getControlValue('txtSurname', doc);
-        doc.Name = getControlValue('txtName', doc);
-        doc.Name = Ext.getCmp('txtMiddleName').getValue();
-        doc.Name = getControlValue('ctrlGender', doc);
-        doc.Name = getControlValue('dtDocumentDate', doc);
-        doc.Name = getControlValue('txtSurnameBirth', doc);
-        doc.Name = getControlValue('txtNameBirth', doc);
-        doc.Name = Ext.getCmp('txtMiddleNameBirth').getValue();
-        doc.Name = getControlValue('dtBirthDate', doc);
-        doc.Name = getControlValue('txtBirthPlace', doc);
-        doc.Name = getControlValue('txtPassport', doc);
-        doc.Name = getControlValue('txtPassportNum', doc);
-        doc.Name = getControlValue('txtPassportGivenBy', doc);
-        doc.Name = getControlValue('dtPassportGivenDate', doc);
-        doc.Name = getControlValue('txtAddress', doc);
-        doc.Name = getControlValue('txtMobileNumber', doc);
-        doc.Name = Ext.getCmp('txtContactTime').getValue();
-        doc.Name = Ext.getCmp('txtAdditionalTel').getValue();
-        doc.Name = Ext.getCmp('txtEmail').getValue();
-        doc.Name = Ext.getCmp('chkEmail').getValue();
-        doc.Name = Ext.getCmp('chkPostSend').getValue();
+        doc.surname = getControlValue('txtSurname', doc);
+        doc.status = getControlValue('txtStatus', doc);
+        doc.name = getControlValue('txtName', doc);
+        doc.middleName = Ext.getCmp('txtMiddleName').getValue();
+        doc.Gender = getControlValue('ctrlGender', doc);
+        doc.DocumentDate = getControlValue('dtDocumentDate', doc);
+        doc.SurnameBirth = getControlValue('txtSurnameBirth', doc);
+        doc.NameBirth = getControlValue('txtNameBirth', doc);
+        doc.MiddleNameBirth = Ext.getCmp('txtMiddleNameBirth').getValue();
+        doc.BirthDate = getControlValue('dtBirthDate', doc);
+        doc.BirthPlace = getControlValue('txtBirthPlace', doc);
+        doc.Passport = getControlValue('txtPassport', doc);
+        doc.PassportNum = getControlValue('txtPassportNum', doc);
+        doc.PassportGivenBy = getControlValue('txtPassportGivenBy', doc);
+        doc.PassportGivenDate = getControlValue('dtPassportGivenDate', doc);
+        doc.Address = getControlValue('txtAddress', doc);
+        doc.MobileNumber = getControlValue('txtMobileNumber', doc);
+        doc.ContactTime = Ext.getCmp('txtContactTime').getValue();
+        doc.AdditionalTel = Ext.getCmp('txtAdditionalTel').getValue();
+        doc.Email = Ext.getCmp('txtEmail').getValue();
+        doc.isEmail = Ext.getCmp('chkEmail').getValue();
+        doc.isPostSend = Ext.getCmp('chkPostSend').getValue();
 
         return doc;
     } catch(err) {
