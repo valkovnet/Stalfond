@@ -240,7 +240,9 @@ Ext.define('Stalfond.view.MainView', {
                                                                             submitEmptyText: false,
                                                                             emptyText: 'СНИЛС',
                                                                             allowBlank: false,
-                                                                            blankText: "Введите № договора"
+                                                                            blankText: "Введите № договора",
+                                                                            regex: /^[\d]{3}-[\d]{3}-[\d]{3} [\d]{2}$/,
+                                                                            regexText: 'Неверный формат СНИЛС. Введите номер в формате XXX-XXX-XXX XX.'
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -442,7 +444,9 @@ Ext.define('Stalfond.view.MainView', {
                                                                             labelWidth: 150,
                                                                             id: 'txtPassport',
                                                                             allowBlank: false,
-                                                                            blankText: "Введите серию паспорта"
+                                                                            blankText: "Введите серию паспорта",
+                                                                            regex: /^[\d]{4}$/,
+                                                                            regexText: 'Неверный формат серии паспорта. Введите номер в формате XXXX.'
                                                                         }
                                                                     ]
                                                                 }
@@ -476,7 +480,9 @@ Ext.define('Stalfond.view.MainView', {
                                                                             labelWidth: 150,
                                                                             id: 'txtPassportNum',
                                                                             allowBlank: false,
-                                                                            blankText: "Введите номер паспорта"
+                                                                            blankText: "Введите номер паспорта",
+                                                                            regex: /^[\d]{6}$/,
+                                                                            regexText: 'Неверный формат номера паспорта. Введите номер в формате XXXXХХ.'
                                                                         }
                                                                     ]
                                                                 }
@@ -600,7 +606,7 @@ Ext.define('Stalfond.view.MainView', {
                                                                             allowBlank: false,
                                                                             //vtype: 'vMobile',
                                                                             blankText: "Введите мобильный телефон",
-                                                                            regex: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/,
+                                                                            regex: /^(\+7)[\d ]{10}$/,
                                                                             regexText: 'Неверный номер. Введите номер в формате +7XXXXXXXXXX.'
                                                                         },
                                                                         {
@@ -643,7 +649,7 @@ Ext.define('Stalfond.view.MainView', {
                                                                             fieldLabel: 'Доп. телефон',
                                                                             labelWidth: 150,
                                                                             id: 'txtAdditionalTel',
-                                                                            regex: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/,
+                                                                            regex: /^(\+7)[\d ]{10}$/,
                                                                             regexText: 'Неверный номер. Введите номер в формате +7XXXXXXXXXX.'
                                                                         },
                                                                         {
