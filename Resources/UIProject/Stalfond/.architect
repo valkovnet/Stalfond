@@ -37,12 +37,14 @@
                                     "cn": [
                                         {
                                             "id": "b7ef737b-7827-45d9-8a5c-d204be245a2b",
+                                            "expanded": false,
                                             "cn": [
                                                 {
                                                     "id": "1b4492d8-ad3d-4037-b07e-131dc39d0095"
                                                 },
                                                 {
                                                     "id": "cc96139f-11a8-45ae-a6e9-993444a790e2",
+                                                    "expanded": false,
                                                     "cn": [
                                                         {
                                                             "id": "546a810d-6322-40e2-8c34-44d671d47d5a"
@@ -195,7 +197,6 @@
                                                         },
                                                         {
                                                             "id": "4185c107-3be0-42e0-8bc3-324414c87b49",
-                                                            "expanded": false,
                                                             "cn": [
                                                                 {
                                                                     "id": "29828007-8b27-41e4-970e-9a3d0881d35e",
@@ -376,12 +377,6 @@
                                                     "expanded": false,
                                                     "cn": [
                                                         {
-                                                            "id": "5b20ed8e-0e7e-4cb7-8a03-c766d8dbbdbd"
-                                                        },
-                                                        {
-                                                            "id": "55eea8fb-6097-44c4-8527-5c308f4a7057"
-                                                        },
-                                                        {
                                                             "id": "a604dd8f-3eb2-4f1e-b9e5-cfe42602a352"
                                                         },
                                                         {
@@ -394,9 +389,6 @@
                                                     "expanded": false,
                                                     "cn": [
                                                         {
-                                                            "id": "f8a2e280-2ce3-4884-9754-7f829e96cc74"
-                                                        },
-                                                        {
                                                             "id": "73e522da-230b-4340-8913-74736eade219"
                                                         },
                                                         {
@@ -408,9 +400,6 @@
                                                     "id": "6399f558-79ca-4b3d-9edf-86021fea0831",
                                                     "expanded": false,
                                                     "cn": [
-                                                        {
-                                                            "id": "80c2f08e-3108-4801-90ab-0dca11c374d3"
-                                                        },
                                                         {
                                                             "id": "8e8b444b-c37d-404e-9d9c-c962e36270ad"
                                                         },
@@ -601,7 +590,7 @@
     },
     "inspectorState": {
         "topInstance": "353f0c49-9162-4dc5-8e2d-ffb09f0d3a62",
-        "selectedInstance": "7a9be988-4ed4-4e65-a36f-1e5a431fa2f5"
+        "selectedInstance": "b4b1d190-c367-4874-8fe6-5021e5f482b0"
     },
     "editMode": "design",
     "userSettings": {

@@ -547,6 +547,7 @@
                                                                             "codeClass": null,
                                                                             "userConfig": {
                                                                                 "fieldLabel": "Дата договора",
+                                                                                "format": "m.d.Y",
                                                                                 "labelWidth": 150,
                                                                                 "minWidth": 400,
                                                                                 "width": "100%"
@@ -611,6 +612,7 @@
                                                                             "codeClass": null,
                                                                             "userConfig": {
                                                                                 "fieldLabel": "Дата рождения",
+                                                                                "format": "m.d.Y",
                                                                                 "labelWidth": 150,
                                                                                 "minWidth": 400,
                                                                                 "width": "100%"
@@ -882,6 +884,7 @@
                                                                             "codeClass": null,
                                                                             "userConfig": {
                                                                                 "fieldLabel": "Дата выдачи",
+                                                                                "format": "m.d.Y",
                                                                                 "labelWidth": 150,
                                                                                 "margin": null,
                                                                                 "minWidth": 400,
@@ -1432,6 +1435,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "fieldLabel": "Дата создания от",
+                                                        "format": "m.d.Y",
                                                         "labelWidth": 120,
                                                         "margin": 10,
                                                         "width": 250
@@ -1448,6 +1452,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "fieldLabel": "Дата создания до",
+                                                        "format": "m.d.Y",
                                                         "labelWidth": 120,
                                                         "margin": 10,
                                                         "width": 250
@@ -1507,38 +1512,6 @@
                                             "designerId": "6d632b5a-4495-4f44-a099-b6a32af937be",
                                             "cn": [
                                                 {
-                                                    "type": "Ext.form.field.Date",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "fieldLabel": "От",
-                                                        "labelWidth": 80,
-                                                        "margin": 10,
-                                                        "width": 200
-                                                    },
-                                                    "name": "MyDateField3",
-                                                    "designerId": "5b20ed8e-0e7e-4cb7-8a03-c766d8dbbdbd"
-                                                },
-                                                {
-                                                    "type": "Ext.form.field.Date",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "fieldLabel": "До",
-                                                        "labelWidth": 80,
-                                                        "margin": 10,
-                                                        "width": 200
-                                                    },
-                                                    "name": "MyDateField4",
-                                                    "designerId": "55eea8fb-6097-44c4-8527-5c308f4a7057"
-                                                },
-                                                {
                                                     "type": "Ext.form.field.Text",
                                                     "reference": {
                                                         "name": "items",
@@ -1590,21 +1563,6 @@
                                             "designerId": "cdd36071-dd8e-4dfe-8261-0ff83ff56f7c",
                                             "cn": [
                                                 {
-                                                    "type": "Ext.form.field.Date",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "fieldLabel": "Дата начала от",
-                                                        "margin": 10,
-                                                        "width": 250
-                                                    },
-                                                    "name": "MyDateField3",
-                                                    "designerId": "f8a2e280-2ce3-4884-9754-7f829e96cc74"
-                                                },
-                                                {
                                                     "type": "Ext.form.field.ComboBox",
                                                     "reference": {
                                                         "name": "items",
@@ -1653,21 +1611,6 @@
                                             "name": "MyFieldContainer5",
                                             "designerId": "6399f558-79ca-4b3d-9edf-86021fea0831",
                                             "cn": [
-                                                {
-                                                    "type": "Ext.form.field.Date",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "fieldLabel": "От",
-                                                        "margin": 10,
-                                                        "width": 250
-                                                    },
-                                                    "name": "MyDateField3",
-                                                    "designerId": "80c2f08e-3108-4801-90ab-0dca11c374d3"
-                                                },
                                                 {
                                                     "type": "Ext.form.field.ComboBox",
                                                     "reference": {
@@ -1905,6 +1848,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "fieldLabel": "Дата создания от",
+                                                        "format": "m.d.Y",
                                                         "labelWidth": 120,
                                                         "margin": 10,
                                                         "width": 250
@@ -1956,6 +1900,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "fieldLabel": "До",
+                                                        "format": "m.d.Y",
                                                         "labelWidth": 50,
                                                         "margin": 10,
                                                         "width": 180

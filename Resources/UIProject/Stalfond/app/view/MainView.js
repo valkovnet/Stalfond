@@ -23,6 +23,7 @@ Ext.define('Stalfond.view.MainView', {
         'Ext.menu.Item',
         'Ext.tab.Panel',
         'Ext.tab.Tab',
+        'Ext.form.Label',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Date',
         'Ext.form.CheckboxGroup',
@@ -138,23 +139,10 @@ Ext.define('Stalfond.view.MainView', {
                                                         ]
                                                     }
                                                 },
-                                            {
-                                                xtype: 'button',
-                                                scale: 'medium',
-                                                text: 'Сохранить',
-                                                listeners: {
-                                                    click: function() {
-                                                        
-                                                        var doc = buildDocument();
-                                                        if (doc.isOk == true) {
-                                                            VLib.API.StalfondDirect.CreateDocument({ document: doc }, function(resp) {
-                                                                //alert('Номер документа - ' + resp.documentId);
-                                                                Ext.getCmp('txtDocNumber').setValue(resp.documentId);
-                                                                Ext.getCmp('txtStatus').setValue(resp.Status);
-                                                            });
-                                                        }
-                                                    }
-                                                    }   
+                                                {
+                                                    xtype: 'button',
+                                                    scale: 'medium',
+                                                    text: 'Сохранить'
                                                 },
                                                 {
                                                     xtype: 'button',
@@ -170,20 +158,20 @@ Ext.define('Stalfond.view.MainView', {
                                             dock: 'top',
                                             height: '100%',
                                             itemId: 'conrtactCheckoutContainer',
-                                            id: 'mainContainer',
                                             padding: 10,
                                             items: [
                                                 {
                                                     xtype: 'container',
-                                                    margin: 10,
                                                     items: [
                                                         {
-                                                            xtype: 'textfield',
-                                                            minWidth: 400,
-                                                            width: '100%',
-                                                            fieldLabel: 'Статус документа',
-                                                            labelWidth: 150,
-                                                            id: 'txtStatus'
+                                                            xtype: 'label',
+                                                            margin: 10,
+                                                            text: 'Статус:'
+                                                        },
+                                                        {
+                                                            xtype: 'label',
+                                                            margin: 100,
+                                                            text: 'Новый'
                                                         }
                                                     ]
                                                 },
@@ -214,28 +202,21 @@ Ext.define('Stalfond.view.MainView', {
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: '№ договора',
-                                                                            labelWidth: 150,
-                                                                            id: 'txtDocNumber'
+                                                                            labelWidth: 150
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
-																			id:'txtSurname',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Фимилия',
-                                                                            labelWidth: 150,
-                                                                            allowBlank: false,
-                                                                            blankText: "Введите фамилию"
+                                                                            labelWidth: 150
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Имя',
-                                                                            labelWidth: 150,
-                                                                            id: 'txtName',
-                                                                            allowBlank: false,
-                                                                            blankText: "Введите имя"
+                                                                            labelWidth: 150
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -278,7 +259,8 @@ Ext.define('Stalfond.view.MainView', {
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Дата договора',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            format: 'm.d.Y'
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -306,7 +288,8 @@ Ext.define('Stalfond.view.MainView', {
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Дата рождения',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            format: 'm.d.Y'
                                                                         }
                                                                     ]
                                                                 }
@@ -446,7 +429,8 @@ Ext.define('Stalfond.view.MainView', {
                                                                             padding: '-8 0',
                                                                             width: '100%',
                                                                             fieldLabel: 'Дата выдачи',
-                                                                            labelWidth: 150
+                                                                            labelWidth: 150,
+                                                                            format: 'm.d.Y'
                                                                         }
                                                                     ]
                                                                 }
@@ -695,14 +679,16 @@ Ext.define('Stalfond.view.MainView', {
                                                     margin: 10,
                                                     width: 250,
                                                     fieldLabel: 'Дата создания от',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    format: 'm.d.Y'
                                                 },
                                                 {
                                                     xtype: 'datefield',
                                                     margin: 10,
                                                     width: 250,
                                                     fieldLabel: 'Дата создания до',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    format: 'm.d.Y'
                                                 },
                                                 {
                                                     xtype: 'textfield',
@@ -728,20 +714,6 @@ Ext.define('Stalfond.view.MainView', {
                                             width: '20%',
                                             items: [
                                                 {
-                                                    xtype: 'datefield',
-                                                    margin: 10,
-                                                    width: 200,
-                                                    fieldLabel: 'От',
-                                                    labelWidth: 80
-                                                },
-                                                {
-                                                    xtype: 'datefield',
-                                                    margin: 10,
-                                                    width: 200,
-                                                    fieldLabel: 'До',
-                                                    labelWidth: 80
-                                                },
-                                                {
                                                     xtype: 'textfield',
                                                     margin: 10,
                                                     width: 200,
@@ -765,12 +737,6 @@ Ext.define('Stalfond.view.MainView', {
                                             width: '20%',
                                             items: [
                                                 {
-                                                    xtype: 'datefield',
-                                                    margin: 10,
-                                                    width: 250,
-                                                    fieldLabel: 'Дата начала от'
-                                                },
-                                                {
                                                     xtype: 'combobox',
                                                     margin: 10,
                                                     width: 250,
@@ -791,12 +757,6 @@ Ext.define('Stalfond.view.MainView', {
                                             minWidth: 200,
                                             width: '20%',
                                             items: [
-                                                {
-                                                    xtype: 'datefield',
-                                                    margin: 10,
-                                                    width: 250,
-                                                    fieldLabel: 'От'
-                                                },
                                                 {
                                                     xtype: 'combobox',
                                                     margin: 10,
@@ -897,7 +857,8 @@ Ext.define('Stalfond.view.MainView', {
                                                     margin: 10,
                                                     width: 250,
                                                     fieldLabel: 'Дата создания от',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    format: 'm.d.Y'
                                                 },
                                                 {
                                                     xtype: 'textfield',
@@ -920,7 +881,8 @@ Ext.define('Stalfond.view.MainView', {
                                                     margin: 10,
                                                     width: 180,
                                                     fieldLabel: 'До',
-                                                    labelWidth: 50
+                                                    labelWidth: 50,
+                                                    format: 'm.d.Y'
                                                 },
                                                 {
                                                     xtype: 'textfield',
@@ -1034,29 +996,5 @@ Ext.define('Stalfond.view.MainView', {
     onMenuClick: function(menu, item, e, eOpts) {
         location.hash = item.itemId;
     }
-    
+
 });
-
-function getControlValue(ctrlId, doc) {
-    var ctrl = Ext.getCmp(ctrlId);
-    if (ctrl.isValid()) {
-        return ctrl.getValue();
-    } else {
-        doc.isOk = false;
-        return null;
-    }
-}
-
-function buildDocument() {
-    var doc = {};
-    
-    try {
-        doc.isOk = true;
-        doc.Surname = getControlValue('txtSurname', doc);
-        doc.Name = getControlValue('txtName', doc);
-
-        return doc;
-    } catch(err) {
-        return null;
-    }
-};
