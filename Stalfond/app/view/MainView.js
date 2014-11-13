@@ -280,7 +280,7 @@ Ext.define('Stalfond.view.MainView', {
                                                                             blankText: "Введите № договора",
                                                                             regex: /^[\d]{3}-[\d]{3}-[\d]{3} [\d]{2}$/,
                                                                             regexText: 'Неверный формат СНИЛС. Введите номер в формате XXX-XXX-XXX XX.',
-                                                                            plugins: [new Ux.InputTextMask('999-999-999 99')]                                                                            
+                                                                            plugins: [new Ux.InputTextMask('999-999-999 99')]
                                                                         },
                                                                         {
                                                                             xtype: 'combobox',
@@ -963,7 +963,11 @@ Ext.define('Stalfond.view.MainView', {
                                                     width: 250,
                                                     fieldLabel: 'Дата создания от',
                                                     labelWidth: 120,
-                                                    format: 'm.d.Y'
+                                                    format: 'm.d.Y',
+                                                    invalidText: "Дата",
+                                                    submitFormat: 'm.d.Y',                                                                            
+                                                    invalidText: "Дата",
+                                                    plugins: [new Ux.InputTextMask('99.99.9999')]
                                                 },
                                                 {
                                                     xtype: 'datefield',
@@ -971,7 +975,11 @@ Ext.define('Stalfond.view.MainView', {
                                                     width: 250,
                                                     fieldLabel: 'Дата создания до',
                                                     labelWidth: 120,
-                                                    format: 'm.d.Y'
+                                                    format: 'm.d.Y',
+                                                    invalidText: "Дата",
+                                                    submitFormat: 'm.d.Y',                                                                            
+                                                    invalidText: "Дата",
+                                                    plugins: [new Ux.InputTextMask('99.99.9999')]
                                                 },
                                                 {
                                                     xtype: 'textfield',
@@ -985,7 +993,9 @@ Ext.define('Stalfond.view.MainView', {
                                                     margin: 10,
                                                     width: 250,
                                                     fieldLabel: 'Телефон',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    regexText: 'Неверный номер. Введите номер в формате +7 (XXX) XXXX-XXXX.',
+                                                    plugins: [new Ux.InputTextMask('+7 (99) 9999-9999')]
                                                 }
                                             ]
                                         },
@@ -995,37 +1005,44 @@ Ext.define('Stalfond.view.MainView', {
                                             id: 'col-left-filter-first',
                                             minWidth: 250,
                                             width: '20%',
-                                            items: [
-                                                {
-                                                    xtype: 'datefield',
-                                                    margin: 10,
-                                                    width: 200,
-                                                    fieldLabel: 'От',
-                                                    labelWidth: 80,
-                                                    format: 'm.d.Y'
-                                                },
-                                                {
-                                                    xtype: 'datefield',
-                                                    margin: 10,
-                                                    width: 200,
-                                                    fieldLabel: 'До',
-                                                    labelWidth: 80,
-                                                    format: 'm.d.Y'
-                                                },
+                                            items: [                                                
                                                 {
                                                     xtype: 'textfield',
                                                     margin: 10,
-                                                    width: 200,
+                                                    width: 250,
                                                     fieldLabel: 'Снилс',
-                                                    labelWidth: 80
+                                                    labelWidth: 100,
+                                                    allowBlank: false,
+                                                    blankText: "Введите № договора",
+                                                    regex: /^[\d]{3}-[\d]{3}-[\d]{3} [\d]{2}$/,
+                                                    regexText: 'Неверный формат СНИЛС. Введите номер в формате XXX-XXX-XXX XX.',
+                                                    plugins: [new Ux.InputTextMask('999-999-999 99')]
                                                 },
                                                 {
                                                     xtype: 'textfield',
                                                     margin: 10,
-                                                    width: 200,
-                                                    fieldLabel: 'ID заявки',
-                                                    labelWidth: 80
-                                                }
+                                                    width: 250,
+                                                    labelWidth: 100,
+                                                    fieldLabel: 'ID заявки',                                                    
+                                                    plugins: [new Ux.InputTextMask('999999999')]
+                                                },
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Дата начала от',
+                                                    format: 'm.d.Y',
+                                                    invalidText: "Дата",
+                                                    submitFormat: 'm.d.Y',                                                                            
+                                                    invalidText: "Дата",
+                                                    plugins: [new Ux.InputTextMask('99.99.9999')]
+                                                },
+                                                {
+                                                    xtype: 'combobox',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'Статус'
+                                                },
                                             ]
                                         },
                                         {
@@ -1034,14 +1051,7 @@ Ext.define('Stalfond.view.MainView', {
                                             id: 'col-left-filter-second',
                                             minWidth: 200,
                                             width: '20%',
-                                            items: [
-                                                {
-                                                    xtype: 'datefield',
-                                                    margin: 10,
-                                                    width: 250,
-                                                    fieldLabel: 'Дата начала от',
-                                                    format: 'm.d.Y'
-                                                },
+                                            items: [       
                                                 {
                                                     xtype: 'combobox',
                                                     margin: 10,
@@ -1049,11 +1059,22 @@ Ext.define('Stalfond.view.MainView', {
                                                     fieldLabel: 'Статус'
                                                 },
                                                 {
-                                                    xtype: 'textfield',
+                                                    xtype: 'combobox',
                                                     margin: 10,
                                                     width: 250,
                                                     fieldLabel: 'Подразделение'
-                                                }
+                                                },                                    
+                                                {
+                                                    xtype: 'datefield',
+                                                    margin: 10,
+                                                    width: 250,
+                                                    fieldLabel: 'До',
+                                                    format: 'm.d.Y',
+                                                    invalidText: "Дата",
+                                                    submitFormat: 'm.d.Y',                                                                            
+                                                    invalidText: "Дата",
+                                                    plugins: [new Ux.InputTextMask('99.99.9999')]
+                                                }                                                
                                             ]
                                         },
                                         {
@@ -1063,25 +1084,6 @@ Ext.define('Stalfond.view.MainView', {
                                             minWidth: 200,
                                             width: '20%',
                                             items: [
-                                                {
-                                                    xtype: 'datefield',
-                                                    margin: 10,
-                                                    width: 250,
-                                                    fieldLabel: 'От',
-                                                    format: 'm.d.Y'
-                                                },
-                                                {
-                                                    xtype: 'combobox',
-                                                    margin: 10,
-                                                    width: 250,
-                                                    fieldLabel: 'Подразделение'
-                                                },
-                                                {
-                                                    xtype: 'textfield',
-                                                    margin: 10,
-                                                    width: 250,
-                                                    fieldLabel: 'ID'
-                                                },
                                                 {
                                                     xtype: 'button',
                                                     margin: 10,
@@ -1105,17 +1107,17 @@ Ext.define('Stalfond.view.MainView', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'string',
-                                                    text: 'String'
+                                                    text: 'Название'
                                                 },
                                                 {
                                                     xtype: 'numbercolumn',
                                                     dataIndex: 'number',
-                                                    text: 'Number'
+                                                    text: 'Номер'
                                                 },
                                                 {
                                                     xtype: 'datecolumn',
                                                     dataIndex: 'date',
-                                                    text: 'Date'
+                                                    text: 'Дата'
                                                 },
                                                 {
                                                     xtype: 'booleancolumn',
