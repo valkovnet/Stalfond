@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" %>
 
+<%@ Import Namespace="System.Linq" %>
+<%@ Import Namespace="Virtu.Service" %>
+<%@ Import Namespace="Virtu.Web.Security" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -10,15 +14,25 @@
         Ext.theme = {
             name: ""
         };
-    </script>
+    </script>    
+
     <script src="http://cdn.sencha.com/ext/gpl/5.0.1/build/ext-all.js"></script>
     <script src="http://cdn.sencha.com/ext/gpl/5.0.1/build/packages/ext-theme-crisp/build/ext-theme-crisp.js"></script>
     <link rel="stylesheet" href="http://cdn.sencha.com/ext/gpl/5.0.1/build/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <script src="http://code.jquery.com/jquery-latest.min.js"
-        type="text/javascript"></script>
- 
+
     <script type="text/javascript" src="api.vlib"></script>
+    <script type="text/javascript" src="Resources/Scripts/Framework.js"></script>
+
+    <!--script type="text/javascript" src="Resources/Scripts/common.js"></script-->
+
+    <script type="text/javascript" http-equiv="cache-control" content="must-revalidate"  src="Resources/Scripts/linq.js"></script>
+    
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="Resources/Scripts/InputTextMask.js"></script>     
+    <script type="text/javascript" src="Resources/Scripts/functions.js"></script>     
+    <!--script type="text/javascript" src="Resources/Plugins/address.js"></script-->
     
     <script type="text/javascript">
 

@@ -14,8 +14,17 @@
  */
 
 // @require @packageOverrides
-Ext.Loader.setConfig({
+//Ext.Loader.setConfig({
+//
+//});
 
+Ext.Loader.setConfig({
+    enabled: true,
+    paths: {
+        Ext: '.',
+        VLib: '/Scripts/VLib',
+        Stalfond: 'app'
+    }
 });
 
 

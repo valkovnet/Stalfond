@@ -19,15 +19,16 @@ Ext.define('Stalfond.view.MainView', {
 
     requires: [
         'Stalfond.view.MainViewViewModel',
+        'Stalfond.view.Qa',
         'Ext.menu.Menu',
         'Ext.menu.Item',
         'Ext.tab.Panel',
         'Ext.tab.Tab',
         'Ext.form.Label',
         'Ext.form.field.ComboBox',
+        'Ext.form.RadioGroup',
+        'Ext.form.field.Radio',
         'Ext.form.field.Date',
-        'Ext.form.CheckboxGroup',
-        'Ext.form.field.Checkbox',
         'Ext.form.field.File',
         'Ext.grid.Panel',
         'Ext.grid.column.Number',
@@ -199,6 +200,7 @@ Ext.define('Stalfond.view.MainView', {
                                                                     items: [
                                                                         {
                                                                             xtype: 'textfield',
+                                                                            maskElement: 'XXX-XXX-XXX YY',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: '№ договора',
@@ -231,6 +233,22 @@ Ext.define('Stalfond.view.MainView', {
                                                                             width: '100%',
                                                                             fieldLabel: 'Пол',
                                                                             labelWidth: 150
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    xtype: 'radiogroup',
+                                                                    flex: 1,
+                                                                    width: '50%',
+                                                                    fieldLabel: 'Label',
+                                                                    items: [
+                                                                        {
+                                                                            xtype: 'radiofield',
+                                                                            boxLabel: 'Box Label'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'radiofield',
+                                                                            boxLabel: 'Box Label'
                                                                         }
                                                                     ]
                                                                 }
@@ -440,18 +458,12 @@ Ext.define('Stalfond.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'container',
-                                                    height: 26,
+                                                    height: 210,
                                                     id: 'col-center-second',
                                                     margin: '0 20 0 0',
                                                     items: [
                                                         {
-                                                            xtype: 'textfield',
-                                                            margin: '0 10 0 10',
-                                                            minWidth: 400,
-                                                            padding: '',
-                                                            width: '100%',
-                                                            fieldLabel: 'Адрес',
-                                                            labelWidth: 150
+                                                            xtype: 'kladr'
                                                         }
                                                     ]
                                                 },

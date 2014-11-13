@@ -428,6 +428,7 @@
                                                                                 "fieldLabel": "№ договора",
                                                                                 "labelWidth": 150,
                                                                                 "margin": null,
+                                                                                "maskElement": "XXX-XXX-XXX YY",
                                                                                 "minWidth": 400,
                                                                                 "padding": null,
                                                                                 "width": "100%"
@@ -498,6 +499,51 @@
                                                                             },
                                                                             "name": "MyComboBox",
                                                                             "designerId": "75929399-d66f-4e79-876a-f952a6f5dcdf"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "Ext.form.RadioGroup",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fieldLabel": "Label",
+                                                                        "layout|flex": 1,
+                                                                        "width": "50%"
+                                                                    },
+                                                                    "name": "MyRadioGroup",
+                                                                    "designerId": "bc347275-fe58-4760-b634-aa421c616d30",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.form.field.Radio",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "boxLabel": "Box Label",
+                                                                                "fieldLabel": null
+                                                                            },
+                                                                            "name": "MyRadio",
+                                                                            "designerId": "e706bcb5-5c76-4d1e-b7c5-c4cc1328cdd9"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.form.field.Radio",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "boxLabel": "Box Label",
+                                                                                "fieldLabel": null
+                                                                            },
+                                                                            "name": "MyRadio1",
+                                                                            "designerId": "cf218671-c2aa-475b-97a3-057e3c976319"
                                                                         }
                                                                     ]
                                                                 }
@@ -908,7 +954,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "height": 26,
+                                                        "height": 210,
                                                         "id": "col-center-second",
                                                         "margin": "0 20 0 0"
                                                     },
@@ -916,22 +962,15 @@
                                                     "designerId": "33be644b-f21e-4a0a-8643-41d462aacca7",
                                                     "cn": [
                                                         {
-                                                            "type": "Ext.form.field.Text",
+                                                            "type": "linkedinstance",
                                                             "reference": {
                                                                 "name": "items",
                                                                 "type": "array"
                                                             },
                                                             "codeClass": null,
-                                                            "userConfig": {
-                                                                "fieldLabel": "Адрес",
-                                                                "labelWidth": 150,
-                                                                "margin": "0 10 0 10",
-                                                                "minWidth": 400,
-                                                                "padding": "",
-                                                                "width": "100%"
-                                                            },
-                                                            "name": "MyTextField7",
-                                                            "designerId": "6fa236c9-8083-4be4-993c-08dc5fdcab3d"
+                                                            "name": "qa",
+                                                            "designerId": "43e7dab4-a1c2-425a-a1c6-014b1e76681c",
+                                                            "masterInstanceId": "6f4661b8-8582-4b72-bae9-aff63b8cdef8"
                                                         }
                                                     ]
                                                 },

@@ -9,6 +9,40 @@ var genderStore = Ext.create('Ext.data.Store', {
     ]
 });
 
+Ext.apply(Ext.form.VTypes, { 
+    'phoneText': 'Неверный номер. Введите номер в формате +7 (XXX) XXXXXXX.', 
+    'phoneMask': /[\-\+0-9\(\)\s\.Ext]/, 
+    'phoneRe': /^(\({1}[0-9]{3}\){1}\s{1})([0-9]{3}[-]{1}[0-9]{4})$|^(((\+44)? ?(\(0\))? ?)|(0))( ?[0-9]{3,4}){3}$|^Ext. [0-9]+$/, 
+    'phone': function (v) {
+        return this.phoneRe.test(v); 
+    }
+});
+
+// Function to format a phone number
+Ext.apply(Ext.util.Format, {
+    phoneNumber: function(value) {
+        var phoneNumber = value.replace(/\./g, '').replace(/-/g, '').replace(/[^0-9]/g, '');
+        
+        if (phoneNumber != '' && phoneNumber.length == 10) {
+            return '(' + phoneNumber.substr(0, 3) + ') ' + phoneNumber.substr(3, 3) + '-' + phoneNumber.substr(6, 4);
+        } else {
+            return value;
+        }
+    }
+});
+
+Ext.namespace('Ext.ux.plugin');
+
+// Plugin to format a phone number on value change
+Ext.ux.plugin.FormatPhoneNumber = Ext.extend(Ext.form.TextField, {
+    init: function(c) {
+        c.on('change', this.onChange, this);
+    },
+    onChange: function(c) {
+        c.setValue(Ext.util.Format.phoneNumber(c.getValue()));
+    }
+});
+
 var validMobile = '^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$';
 Ext.apply(Ext.form.field.VTypes, {
     //  vtype validation function
@@ -22,7 +56,8 @@ Ext.define('Stalfond.view.MainView', {
     extend: 'Ext.container.Viewport',
     alias: 'widget.mainview',
 
-    requires: [
+    requires: [        
+        'Ux.InputTextMask',
         'Stalfond.view.MainViewViewModel',
         'Ext.menu.Menu',
         'Ext.menu.Item',
@@ -38,7 +73,8 @@ Ext.define('Stalfond.view.MainView', {
         'Ext.grid.column.Date',
         'Ext.grid.column.Boolean',
         'Ext.grid.View',
-        'Ext.toolbar.Paging'
+        'Ext.toolbar.Paging',
+        'Stalfond.view.Qa',         
     ],
 
     viewModel: {
@@ -212,7 +248,7 @@ Ext.define('Stalfond.view.MainView', {
                                                     items: [
                                                         {
                                                             xtype: 'container',
-                                                            height: 160,
+                                                            height: 200,
                                                             id: 'col-left',
                                                             margin: '',
                                                             width: '50%',
@@ -225,7 +261,7 @@ Ext.define('Stalfond.view.MainView', {
                                                                 {
                                                                     xtype: 'fieldcontainer',
                                                                     flex: 1,
-                                                                    height: 120,
+                                                                    height: 140,
                                                                     margin: 10,
                                                                     width: '50%',
                                                                     items: [
@@ -236,13 +272,27 @@ Ext.define('Stalfond.view.MainView', {
                                                                             fieldLabel: '№ договора',
                                                                             labelWidth: 150,
                                                                             id: 'txtDogovorNumber',
+                                                                            maskRe: /[0-9]/,
                                                                             mask: '999-999-999 99',
                                                                             submitEmptyText: false,
                                                                             emptyText: 'СНИЛС',
                                                                             allowBlank: false,
                                                                             blankText: "Введите № договора",
                                                                             regex: /^[\d]{3}-[\d]{3}-[\d]{3} [\d]{2}$/,
-                                                                            regexText: 'Неверный формат СНИЛС. Введите номер в формате XXX-XXX-XXX XX.'
+                                                                            regexText: 'Неверный формат СНИЛС. Введите номер в формате XXX-XXX-XXX XX.',
+                                                                            plugins: [new Ux.InputTextMask('999-999-999 99')]                                                                            
+                                                                        },
+                                                                        {
+                                                                            xtype: 'combobox',
+                                                                            minWidth: 400,
+                                                                            width: '100%',
+                                                                            fieldLabel: 'Агент',
+                                                                            labelWidth: 150,
+                                                                            id: 'ctrlAgent',
+                                                                            displayField: 'name',
+                                                                            valueField: 'id',
+                                                                            editable: false,
+                                                                            mode: 'local'                                                                            
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -303,6 +353,26 @@ Ext.define('Stalfond.view.MainView', {
                                                                             },
                                                                         },
                                                                         {
+                                                                            xtype: 'radiogroup',
+                                                                            flex: 1,
+                                                                            minWidth: 400,
+                                                                            width: '100%',
+                                                                            fieldLabel: 'Пол',
+                                                                            items: [
+                                                                                {
+                                                                                    xtype: 'radiofield',
+                                                                                    boxLabel: 'Мужской',
+                                                                                    margin:10,
+                                                                                    checked:true
+                                                                                },
+                                                                                {
+                                                                                    xtype: 'radiofield',
+                                                                                    margin:10,
+                                                                                    boxLabel: 'Женский'                                                                                    
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                        /*{
                                                                             xtype: 'combobox',
                                                                             minWidth: 400,
                                                                             width: '100%',
@@ -310,18 +380,18 @@ Ext.define('Stalfond.view.MainView', {
                                                                             labelWidth: 150,
                                                                             id: 'ctrlGender',
                                                                             displayField: 'name',
-                                                                            valueField: 'id',
+                                                                            
+                                                                            store: genderStorvalueField: 'id',
                                                                             editable: false,
-                                                                            mode: 'local',
-                                                                            store: genderStore
-                                                                        }
+                                                                            mode: 'local',e
+                                                                        }*/
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
                                                             xtype: 'container',
-                                                            height: 160,
+                                                            height: 200,
                                                             id: 'col-right',
                                                             width: '50%',
                                                             layout: {
@@ -342,12 +412,41 @@ Ext.define('Stalfond.view.MainView', {
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Дата договора',
-                                                                            labelWidth: 150,
-                                                                            format: 'm.d.Y',
+                                                                            labelWidth: 150,                                                                           
                                                                             id: 'dtDocumentDate',
                                                                             allowBlank: false,
-                                                                            blankText: "Введите дату договора"
+                                                                            blankText: "Введите дату договора",                                                                           
+                                                                            allowBlank: false,
+                                                                            format: 'm.d.Y',                                                                           
+                                                                            invalidText: "Дата",
+                                                                            submitFormat: 'm.d.Y',                                                                            
+                                                                            invalidText: "Дата",
+                                                                            plugins: [new Ux.InputTextMask('99.99.9999')]
                                                                         },
+                                                                        {
+                                                                            xtype: 'textfield',
+                                                                            minWidth: 400,
+                                                                            width: '100%',
+                                                                            fieldLabel: 'Место заключения договора',
+                                                                            labelWidth: 150,                                                                            
+                                                                            id: 'txtContactArea',
+                                                                            allowBlank: false,
+                                                                            blankText: "Укажите регион",
+                                                                            emptyText: "Укажите регион"
+                                                                        },      
+                                                                        /*{
+                                                                            xtype: 'container',
+                                                                            minWidth: 400,
+                                                                            height: 210,
+                                                                            labelWidth: 150,
+                                                                            id: 'col-center-second',
+                                                                            margin: '0 20 0 0',
+                                                                            items: [
+                                                                                {
+                                                                                    xtype: 'kladr'
+                                                                                }
+                                                                            ]
+                                                                        },*/    
                                                                         {
                                                                             xtype: 'textfield',
                                                                             minWidth: 400,
@@ -385,7 +484,10 @@ Ext.define('Stalfond.view.MainView', {
                                                                             format: 'm.d.Y',
                                                                             id: 'dtBirthDate',
                                                                             allowBlank: false,
-                                                                            blankText: "Введите дату рождения"
+                                                                            blankText: "Введите дату рождения",
+                                                                            submitFormat: 'm.d.Y',                                                                            
+                                                                            invalidText: "Дата",
+                                                                            plugins: [new Ux.InputTextMask('99.99.9999')]
                                                                         }
                                                                     ]
                                                                 }
@@ -545,7 +647,10 @@ Ext.define('Stalfond.view.MainView', {
                                                                             format: 'm.d.Y',
                                                                             id: 'dtPassportGivenDate',
                                                                             allowBlank: false,
-                                                                            blankText: "Введите дату выдачи паспорта"
+                                                                            blankText: "Введите дату выдачи паспорта",
+                                                                            submitFormat: 'm.d.Y',                                                                            
+                                                                            invalidText: "Дата",
+                                                                            plugins: [new Ux.InputTextMask('99.99.9999')]
                                                                         }
                                                                     ]
                                                                 }
@@ -553,6 +658,29 @@ Ext.define('Stalfond.view.MainView', {
                                                         }
                                                     ]
                                                 },
+                                                /*
+                                                {
+                                                    xtype: 'container',
+                                                    minWidth: 400,
+                                                    height: 210,                                                    
+                                                    labelWidth: 150,
+                                                    id: 'col-center-second',
+                                                    margin: '0 10 0 10',
+                                                    items: [
+                                                        {
+                                                            xtype: 'kladr',                                                             
+                                                            margin: '0 10 0 10',
+                                                            minWidth: 400,
+                                                            padding: '',
+                                                            width: '100%',
+                                                            fieldLabel: 'Адрес',
+                                                            labelWidth: 150,
+                                                            id: 'txtAddress',
+                                                            allowBlank: false,
+                                                            blankText: "Введите адрес"
+                                                        }
+                                                    ]
+                                                },*/
                                                 {
                                                     xtype: 'container',
                                                     height: 26,
@@ -597,7 +725,28 @@ Ext.define('Stalfond.view.MainView', {
                                                                     width: '50%',
                                                                     items: [
                                                                         {
-                                                                            xtype: 'textfield',
+                                                                            xtype: 'textfield', 
+                                                                            id: 'phone_number', 
+                                                                            name: 'phone_number', 
+                                                                            emptyText: '', allowBlank: false, isAcceptV: false,
+                                                                            minWidth: 400,
+                                                                            width: '100%',
+                                                                            fieldLabel: 'Мобильный телефон',
+                                                                            labelWidth: 150,
+                                                                            //maskRe: /[0-9]/,
+                                                                            allowBlank: false,                                                                                                                                                        
+                                                                            blankText: "Введите мобильный телефон",
+                                                                            //regex: /^(\+7)[\d ]{10}$/,
+                                                                            //regexText: 'Неверный номер. Введите номер в формате +7 (XXX) XXXXXXX.',
+                                                                            plugins: [new Ux.InputTextMask('+7 (99) 9999-9999')]
+                                                                            //vtype: 'phone',
+                                                                            /*listeners: {
+                                                                                beforeRender:function(){
+                                                                                        var phoneNumber =  this.getValue();
+                                                                                         this.setValue( '+7 (' + phoneNumber.substr(0, 3) + ') ' + phoneNumber.substr(3, 3) + '-' + phoneNumber.substr(6, 4))
+                                                                                    },
+                                                                            }/                                                                                                    
+                                                                            /*xtype: 'textfield',
                                                                             minWidth: 400,
                                                                             width: '100%',
                                                                             fieldLabel: 'Мобильный телефон',
@@ -607,7 +756,7 @@ Ext.define('Stalfond.view.MainView', {
                                                                             //vtype: 'vMobile',
                                                                             blankText: "Введите мобильный телефон",
                                                                             regex: /^(\+7)[\d ]{10}$/,
-                                                                            regexText: 'Неверный номер. Введите номер в формате +7XXXXXXXXXX.'
+                                                                            regexText: 'Неверный номер. Введите номер в формате +7XXXXXXXXXX.'*/
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -648,9 +797,10 @@ Ext.define('Stalfond.view.MainView', {
                                                                             width: '100%',
                                                                             fieldLabel: 'Доп. телефон',
                                                                             labelWidth: 150,
-                                                                            id: 'txtAdditionalTel',
-                                                                            regex: /^(\+7)[\d ]{10}$/,
-                                                                            regexText: 'Неверный номер. Введите номер в формате +7XXXXXXXXXX.'
+                                                                            id: 'txtAdditionalTel',                                                                            
+                                                                            //regex: /^(\+7)[\d ]{10}$/,
+                                                                            regexText: 'Неверный номер. Введите номер в формате +7 (XXX) XXXX-XXXX.',
+                                                                            plugins: [new Ux.InputTextMask('+7 (99) 9999-9999')]
                                                                         },
                                                                         {
                                                                             xtype: 'textfield',
@@ -1270,7 +1420,7 @@ function clearForm()
     Ext.getCmp('txtSurname').setValue('');
     Ext.getCmp('txtName').setValue('');
     Ext.getCmp('txtMiddleName').setValue('');
-    Ext.getCmp('ctrlGender').select('М');
+    //Ext.getCmp('ctrlGender').select('М');
     Ext.getCmp('dtDocumentDate').setValue('');
     Ext.getCmp('txtSurnameBirth').setValue('');
     Ext.getCmp('txtNameBirth').setValue('');
@@ -1281,8 +1431,8 @@ function clearForm()
     Ext.getCmp('txtPassportNum').setValue('');
     Ext.getCmp('txtPassportGivenBy').setValue('');
     Ext.getCmp('dtPassportGivenDate').setValue('');
-    Ext.getCmp('txtAddress').setValue('');
-    Ext.getCmp('txtMobileNumber').setValue('');
+    //Ext.getCmp('txtAddress').setValue('');
+    //Ext.getCmp('txtMobileNumber').setValue('');
     Ext.getCmp('txtContactTime').setValue('');
     Ext.getCmp('txtAdditionalTel').setValue('');
     Ext.getCmp('txtEmail').setValue('');

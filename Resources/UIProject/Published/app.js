@@ -21,7 +21,8 @@ Ext.Loader.setConfig({
 
 Ext.application({
     views: [
-        'MainView'
+        'MainView',
+        'Qa'
     ],
     controllers: [
         'Navigation'

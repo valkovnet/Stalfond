@@ -18,6 +18,7 @@ Ext.define('Stalfond.controller.Navigation', {
 
     requires: [
         'Ext.util.History'
+        //'Stalfond.base.Env'    
     ],
 
     refs: {
