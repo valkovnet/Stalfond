@@ -75,16 +75,14 @@ namespace Uralsib.Stalfond.Direct.Direct
                     JsonHelper.SetJValue(document, "status", "Заведенный");
                     JsonHelper.SetJValue(document, "statusText", "Заведенный");
                 }
-                JsonHelper.SetJValue(document, "ProductID", "8B9D437D-2B55-488F-88B8-97683273E58A");
-                JsonHelper.SetJValue(document, "ID", new Random().Next(10000, 20000));
+                JsonHelper.SetJValue(document, "ProductID", Constants.ProductID);
+                JsonHelper.SetJValue(document, "ID", new Guid().GetenrateGuid());
 
                 //save here
-                //PolicyStorage PS = new PolicyStorage(new FeatureBase());
-                //var res = (JObject)PS.Update(document);
-                // here we have some EXCEPTION!!
+                PolicyStorage PS = new PolicyStorage(new FeatureBase());
+                var res = (JObject)PS.Update(document);
 
-                //return res;
-
+                
                 return document;
             }
             catch (Exception ex)
@@ -125,8 +123,8 @@ namespace Uralsib.Stalfond.Direct.Direct
                 var resArr = new JArray();
 
                 //var productId = JsonHelper.GetJValue<string>(document, "ProductID");
-                //PolicyStorage storage = new PolicyStorage(new FeatureBase());
-                //var dataObject = storage.Read(productId);
+                PolicyStorage storage = new PolicyStorage(new FeatureBase());
+                var dataObject = storage.Read("7B9D437D-2B55-4D8F-88B8-97683273E58F");
 
                 var resLine = new JObject();
                 resLine.Add("ID", new JValue(10));
