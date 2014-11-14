@@ -8,25 +8,25 @@ namespace Uralsib.Stalfond.Direct.Classes
 {
     public class Result
     {
-        
+        public JToken data;
         public bool success = false;
-        public string message = "";
+        public string message = String.Empty;
 
-        public string status;
-        public string statusText;
+        public string status = String.Empty;
+        public string statusText = String.Empty;
 
-        public int docNumber;
+        public int docNumber = -1;
 
         public JObject ToJObject()
         {
             var res = new JObject();
 
             res.Add("success", new JValue(this.success));
-            res.Add("message", new JValue(this.message));
+            res.Add("data", this.data);
+            res.Add("message", new JValue(this.message));            
             res.Add("status", new JValue(this.status));
             res.Add("statusText", new JValue(this.status));
-            res.Add("docNumber", new JValue(this.docNumber));
-
+            res.Add("docNumber", new JValue(this.docNumber));            
 
             return res;
         }

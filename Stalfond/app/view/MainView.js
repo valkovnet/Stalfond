@@ -1041,7 +1041,7 @@ Ext.define('Stalfond.view.MainView', {
                                                     xtype: 'combobox',
                                                     margin: 10,
                                                     width: 250,
-                                                    fieldLabel: 'Статус'
+                                                    fieldLabel: 'Статус'                                                    
                                                 },
                                             ]
                                         },
@@ -1056,7 +1056,24 @@ Ext.define('Stalfond.view.MainView', {
                                                     xtype: 'combobox',
                                                     margin: 10,
                                                     width: 250,
-                                                    fieldLabel: 'Статус'
+                                                    fieldLabel: 'Статус',
+                                                    colspan: 3, 
+                                                    mode: 'local', 
+                                                    forceSelection: true,
+                                                    displayField: 'Name', 
+                                                    valueField: 'ID',
+                                                    store: new Ext.data.DirectStore({
+                                                        autoLoad: true,
+                                                        baseParams : {ProductID: idOfProduct},
+                                                        root: 'data',
+                                                        idProperty: 'ID',
+                                                        api: {
+                                                            read: VLib.API.StalfondDirect.GetDocumentStatus
+                                                         },
+                                                         fields: [
+                                                            'ID', 'Name'
+                                                         ]
+                                                    })
                                                 },
                                                 {
                                                     xtype: 'combobox',
@@ -1381,7 +1398,7 @@ function buildDocument(validate) {
         doc.status = getControlValue('txtStatus', doc);
         doc.name = getControlValue('txtName', doc);
         doc.middleName = Ext.getCmp('txtMiddleName').getValue();
-        doc.Gender = getControlValue('ctrlGender', doc);
+        //doc.Gender = getControlValue('ctrlGender', doc);
         doc.DocumentDate = getControlValue('dtDocumentDate', doc);
         doc.SurnameBirth = getControlValue('txtSurnameBirth', doc);
         doc.NameBirth = getControlValue('txtNameBirth', doc);
@@ -1393,7 +1410,7 @@ function buildDocument(validate) {
         doc.PassportGivenBy = getControlValue('txtPassportGivenBy', doc);
         doc.PassportGivenDate = getControlValue('dtPassportGivenDate', doc);
         doc.Address = getControlValue('txtAddress', doc);
-        doc.MobileNumber = getControlValue('txtMobileNumber', doc);
+        //doc.MobileNumber = getControlValue('txtMobileNumber', doc);
         doc.ContactTime = Ext.getCmp('txtContactTime').getValue();
         doc.AdditionalTel = Ext.getCmp('txtAdditionalTel').getValue();
         doc.Email = Ext.getCmp('txtEmail').getValue();

@@ -1,7 +1,9 @@
-﻿using Ext.Direct;
+﻿using System.Data;
+using Ext.Direct;
 using Newtonsoft.Json.Linq;
 using System;
 using Uralsib.Stalfond.Direct.Classes;
+using Uralsib.Stalfond.Direct.Validation;
 using Virtu.FFW;
 using Virtu.Json.Policy;
 
@@ -60,6 +62,12 @@ namespace Uralsib.Stalfond.Direct.Direct
         {
             try
             {
+                var snils = JsonHelper.GetJValue<string>(document, "dogovorNumber");
+                if (!SnilsValidator.IsValidSnils(snils))
+                {
+                    throw new DataException("Недопустимый формат страхового номера клиента (СНИЛС).");
+                }
+                
                 JsonHelper.SetJValue(document, "success", true);
                 JsonHelper.SetJValue(document, "message", "Doc has been saved");
                 if ((string)document["status"] == "Черновик" || (string)document["status"] == "Новый")
@@ -106,8 +114,56 @@ namespace Uralsib.Stalfond.Direct.Direct
                 JsonHelper.SetJValue(document, "message", ex.Message);
                 return document;
             }
-
         }
 
+        [DirectMethod, ParseAsJson]
+        public JObject GetDocumentStatus(JObject document)
+        {
+            var res = new Result();
+            try
+            {                
+                var resArr = new JArray();
+
+                //var productId = JsonHelper.GetJValue<string>(document, "ProductID");
+                //PolicyStorage storage = new PolicyStorage(new FeatureBase());
+                //var dataObject = storage.Read(productId);
+
+                var resLine = new JObject();
+                resLine.Add("ID", new JValue(10));
+                resLine.Add("Name", new JValue("Черновик"));
+                resArr.Add(resLine);
+
+                resLine = new JObject();
+                resLine.Add("ID", new JValue(11));
+                resLine.Add("Name", new JValue("Новый"));
+                resArr.Add(resLine);
+
+                resLine = new JObject();
+                resLine.Add("ID", new JValue(12));
+                resLine.Add("Name", new JValue("Заведенный"));
+                resArr.Add(resLine);
+
+                resLine = new JObject();
+                resLine.Add("ID", new JValue(13));
+                resLine.Add("Name", new JValue("Напечатанный"));
+                resArr.Add(resLine);
+
+                resLine = new JObject();
+                resLine.Add("ID", new JValue(14));
+                resLine.Add("Name", new JValue("На обзвоне"));
+                resArr.Add(resLine);
+                
+                res.data = resArr;
+                res.success = true;               
+            }
+            catch (Exception ex)
+            {
+                JsonHelper.SetJValue(document, "success", false);
+                JsonHelper.SetJValue(document, "message", ex.Message);
+                return document;
+            }
+
+            return res.ToJObject();
+        }
     }
 }

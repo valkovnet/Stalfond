@@ -94,8 +94,8 @@
   <ItemGroup>
     <Compile Include="Classes\Result.cs" />
     <Compile Include="Direct\StalfondDirect.cs" />
-    <Compile Include="Helpers\StatusesHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\SnilsValidator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

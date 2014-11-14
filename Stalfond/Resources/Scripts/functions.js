@@ -1,3 +1,5 @@
+var idOfProduct = '8B9D437D-2B55-488F-88B8-97683273E58A';
+
 Date.prototype.format = function(format) {
     var returnStr = '';
     var replace = Date.replaceChars;
